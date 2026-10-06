@@ -7,7 +7,7 @@ const TODO = '[[TODO]]';
 export const SITE = {
   name: 'MrWhisper',
   maker: 'Renixa',
-  version: '2.16.0',
+  version: '2.17.0',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? '',
 
   /** Search engines may index the site only after launch. */

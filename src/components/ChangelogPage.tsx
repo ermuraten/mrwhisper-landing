@@ -3,6 +3,16 @@ import type { Lang } from '@/lib/lang';
 
 const changelogEntries = [
   {
+    version: 'v2.17.0',
+    date: '6. Oktober 2026',
+    changes: [
+      'Neue Funktion: Vollständige englische und türkische Oberfläche - Alle Seiten, Fenster, Tooltips, Statusmeldungen, Rückfragen und Exporttexte (Home, Statistik, Verlauf, Papierkorb, Notiz-Assistent, Snippets, Wörterbuch, Einstellungen, Session-Fenster, Tag-Auswahl, Changelog) erscheinen in der gewählten App-Sprache. Zuvor waren Teile des Verlaufs, der Startseite und der Einstellungen auch auf Englisch noch deutsch. Die deutsche Oberfläche bleibt unverändert.',
+      'Verbesserung: Datum, Uhrzeit und Zahlen folgen der App-Sprache - Eintragsdatum, Wochentage, Statistiken und Exporte (Markdown/Text) nutzen das Format der gewählten Sprache (de-DE, en-GB, tr-TR) statt fest deutscher Formate.',
+      'Verbesserung: Standardkategorie übersetzt angezeigt - Die Tag-Kategorie „Allgemein“ heißt in der englischen und türkischen Oberfläche „General“ bzw. „Genel“. Gespeichert bleibt der Name „Allgemein“; Tags, Backups und Filter ändern sich dadurch nicht.',
+      'Wartung: Übersetzungen zentral und typgeprüft - Rund 1.200 Texte liegen je Sprache in locales/de.json, en.json und tr.json (gleicher Schlüsselbestand, per TypeScript geprüft). Neue Hilfsmodule für Locale, Fortschrittsstatus-Namen und Veredelungs-Vorlagen. Bewusst deutsch bleiben der Inhalt des Changelogs, die Standard-Prompts der lokalen KI und Meldungen des Hauptprozesses.',
+    ]
+  },
+  {
     version: 'v2.16.0',
     date: '2. Oktober 2026',
     changes: [
