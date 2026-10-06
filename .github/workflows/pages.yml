@@ -1,0 +1,45 @@
+# Publishes the static site to GitHub Pages.
+# Manual trigger only until launch. Add `push: branches: [main]` once the site should deploy on every push.
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Fails while src/site.config.ts still has [[TODO]] legal data or the feature lists differ.
+      - run: npm run check
+      - name: Build
+        run: |
+          if [ -f public/CNAME ]; then BASE=""; else BASE="/${GITHUB_REPOSITORY#*/}"; fi
+          NEXT_PUBLIC_BASE_PATH="$BASE" npx next build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
