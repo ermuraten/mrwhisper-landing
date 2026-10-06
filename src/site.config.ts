@@ -27,8 +27,9 @@ export const SITE = {
   checkoutUrl: '',
 
   /** Demo video file below /public (empty = section hidden). */
-  demoVideo: '',
-  demoPoster: '',
+  demoVideo: '/media/mrwhisper-demo.mp4',
+  demoPoster: '/media/poster.jpg',
+  demoCaptions: '/media/mrwhisper-demo.en.vtt',
 
   /** Legal notice data (Impressum). Must be real before the site goes public. */
   legal: {

@@ -59,7 +59,7 @@ export const de: Dict = {
   demo: {
     eyebrow: '🎬 In Aktion',
     title: 'Eine Minute mit MrWhisper',
-    text: 'Eine echte Aufnahme der App (Version 2.16) mit Demo-Daten. Der Sprechtext wurde vom Entwickler aufgenommen (Englisch).',
+    text: 'Eine echte Bildschirmaufnahme der App (Version 2.16) mit erfundenen Demo-Einträgen. Der englische Sprechtext ist eine synthetische Stimme, die auf der Stimme des Entwicklers beruht.',
     fallback: 'Dein Browser kann dieses Video nicht abspielen.',
   },
   flashback: {

@@ -57,7 +57,7 @@ export const en = {
   demo: {
     eyebrow: '🎬 See it in action',
     title: 'A minute with MrWhisper',
-    text: 'A real recording of the app (version 2.16) with demo data. The voice-over was recorded by the developer.',
+    text: 'A real screen recording of the app (version 2.16) with fictional demo entries. The narration is a synthetic voice based on the developer’s own voice. The interface language in the recording is German.',
     fallback: 'Your browser cannot play this video.',
   },
   flashback: {

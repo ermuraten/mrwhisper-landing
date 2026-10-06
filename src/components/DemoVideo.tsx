@@ -20,6 +20,7 @@ export default function DemoVideo({ lang }: { lang: Lang }) {
           poster={SITE.demoPoster ? asset(SITE.demoPoster) : undefined}
         >
           <source src={asset(SITE.demoVideo)} type="video/mp4" />
+          {SITE.demoCaptions ? <track kind="captions" srcLang="en" label="English" src={asset(SITE.demoCaptions)} default /> : null}
           {d.fallback}
         </video>
       </div>
