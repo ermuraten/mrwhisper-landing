@@ -8,6 +8,7 @@ The user explicitly requested a simple public company introduction for a startup
 
 - Repository: https://github.com/ermuraten/mrwhisper-landing (public).
 - Hosting: GitHub Pages via `.github/workflows/company-preview.yml` (manual trigger); custom domain `mrwhisper.site`, DNS managed at Hostinger.
+- Verified live URL: https://mrwhisper.site/ (2026-10-07). Custom domain DNS is connected; HTTPS certificate issued and HTTPS enforced; www redirects to the main domain. Hostinger email DNS remains unchanged. Use this URL for the application; the old github.io project path returned 404 in the final check.
 - No additional paid webhosting needed. Domain and email subscriptions remain at Hostinger.
 - The preview uses relative asset URLs and no JS, analytics, forms, checkout or downloads. Search indexing is disabled.
 - Deploy/update introduction: edit `company-preview/`, commit/push, run `gh workflow run company-preview.yml --ref main`, and check DNS/HTTPS and the live page.
