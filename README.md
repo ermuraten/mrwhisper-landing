@@ -4,15 +4,15 @@ Static, bilingual (English at `/`, German at `/de`) site for MrWhisper. Next.js 
 
 ## Deployment status — 2026-10-07
 
-- Repository: https://github.com/ermuraten/mrwhisper-landing (public).
-- GitHub Pages is enabled with GitHub Actions and HTTPS.
-- Configured URL: https://ermuraten.github.io/mrwhisper-landing/ (not live yet).
-- Contact: Murat Eren, info@mrwhisper.site. Street and postal code/city are still required before running the deploy workflow.
-- Local lint, language parity (68 features) and static production build passed. The launch check correctly fails on the two missing address fields.
-- `mrwhisper.site` is not connected to Pages yet. Claude Startups requires the business email domain to match the website domain: https://claude.com/de/programs/startups.
+The user explicitly requested a simple public company introduction for a startup application while an external legal-notice address is still pending. `company-preview/` is this temporary static site (EN with German project summary), with Murat Eren / info@mrwhisper.site and an honest notice that the address is incomplete. No service has been booked and no private home address is published. The notice does not replace the statutory address requirement.
 
-Once the address is provided: run `npm run check`, commit and push, trigger `gh workflow run pages.yml --ref main`, then verify both languages, assets and legal pages on the deployed URL.
-Keep `NEXT_PUBLIC_BASE_PATH=/mrwhisper-landing` for the GitHub URL. When switching to the custom domain, configure it in GitHub Pages, add `public/CNAME` containing `mrwhisper.site` (used by this workflow to select an empty base path), and rebuild. GitHub Actions does not use the CNAME file itself to configure the custom domain.
+- Repository: https://github.com/ermuraten/mrwhisper-landing (public).
+- Hosting: GitHub Pages via `.github/workflows/company-preview.yml` (manual trigger); custom domain `mrwhisper.site`, DNS managed at Hostinger.
+- No additional paid webhosting needed. Domain and email subscriptions remain at Hostinger.
+- The preview uses relative asset URLs and no JS, analytics, forms, checkout or downloads. Search indexing is disabled.
+- Deploy/update introduction: edit `company-preview/`, commit/push, run `gh workflow run company-preview.yml --ref main`, and check DNS/HTTPS and the live page.
+- The full Next.js landing page remains in `src/` and `public/`; its existing launch check still requires a complete legal address. Once the service address is activated, complete `src/site.config.ts`, add `public/CNAME` containing `mrwhisper.site` (used to select the root build path), run `npm run check` and deploy `pages.yml` to replace the introduction. GitHub Actions configures the domain through Pages settings, not through CNAME alone.
+- Claude Startups requires the email and website domain to match: https://claude.com/de/programs/startups. Application submission and program acceptance have not been performed or guaranteed.
 
 ## Develop
 
