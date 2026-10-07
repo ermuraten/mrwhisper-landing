@@ -18,7 +18,7 @@ export default function Header({ lang }: { lang: Lang }) {
         <nav aria-label={t.nav.menuLabel} className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
           <Link href={href(lang, '/') + '#neu'} className="hover:text-white transition-colors">{t.nav.new}</Link>
           <Link href={href(lang, '/') + '#features'} className="hover:text-white transition-colors">{t.nav.features}</Link>
-          <Link href={href(lang, '/') + '#pricing'} className="hover:text-white transition-colors">{t.nav.pricing}</Link>
+          <Link href={href(lang, '/') + '#pricing'} className="hover:text-white transition-colors">{SITE.preview ? t.preview.availability : t.nav.pricing}</Link>
           <Link href={href(lang, '/') + '#faq'} className="hover:text-white transition-colors">{t.nav.faq}</Link>
           <Link href={href(lang, '/changelog')} className="hover:text-white transition-colors flex items-center gap-1.5">
             <span>{t.nav.changelog}</span>
@@ -32,9 +32,13 @@ export default function Header({ lang }: { lang: Lang }) {
           <Link href={href(other, '/')} hrefLang={other} lang={other} className="text-sm text-gray-300 hover:text-white transition-colors">
             {t.nav.switchTo}
           </Link>
+          {SITE.preview ? (
+            <button type="button" disabled className="bg-white/10 text-gray-400 px-5 py-2 rounded-full font-semibold cursor-not-allowed">{t.preview.soon}</button>
+          ) : (
           <Link href={href(lang, '/') + '#pricing'} className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-[0_0_20px_rgba(6,182,212,0.35)]">
             {t.nav.cta}
           </Link>
+          )}
         </div>
       </div>
     </header>

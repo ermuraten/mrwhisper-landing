@@ -1,3 +1,4 @@
+import { getDict } from '@/i18n';
 import { SITE } from '@/site.config';
 import type { Lang } from '@/lib/lang';
 import { Page, Section } from './Section';
@@ -5,6 +6,17 @@ import { Page, Section } from './Section';
 export default function Imprint({ lang }: { lang: Lang }) {
   const L = SITE.legal;
   const de = lang === 'de';
+  if (SITE.preview) {
+    return (
+      <Page title={de ? 'Impressum' : 'Legal notice (Impressum)'}>
+        <Section title={de ? 'Angaben zum Anbieter' : 'Provider information'}>
+          <p>{L.name}<br />{SITE.name}</p>
+          <p><a className="text-cyan-300 underline" href={`mailto:${L.email}`}>{L.email}</a></p>
+          <p>{getDict(lang).preview.pending}</p>
+        </Section>
+      </Page>
+    );
+  }
   return (
     <Page title={de ? 'Impressum' : 'Legal notice (Impressum)'}>
       <Section title={de ? 'Angaben gemäß § 5 DDG' : 'Provider information (§ 5 DDG)'}>

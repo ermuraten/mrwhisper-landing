@@ -4,16 +4,19 @@ Static, bilingual (English at `/`, German at `/de`) site for MrWhisper. Next.js 
 
 ## Deployment status — 2026-10-07
 
-The user explicitly requested a simple public company introduction for a startup application while an external legal-notice address is still pending. `company-preview/` is this temporary static site (EN with German project summary), with Murat Eren / info@mrwhisper.site and an honest notice that the address is incomplete. No service has been booked and no private home address is published. The notice does not replace the statutory address requirement.
+The original bilingual landing page is published as a product presentation at https://mrwhisper.site/ (German: `/de/`), including the self-hosted demo video. The user explicitly requested this while an external legal-notice address is pending. The existing simple company introduction is preserved at https://mrwhisper.site/company/.
 
 - Repository: https://github.com/ermuraten/mrwhisper-landing (public).
-- Hosting: GitHub Pages via `.github/workflows/company-preview.yml` (manual trigger); custom domain `mrwhisper.site`, DNS managed at Hostinger.
-- Verified live URL: https://mrwhisper.site/ (2026-10-07). Custom domain DNS is connected; HTTPS certificate issued and HTTPS enforced; www redirects to the main domain. Hostinger email DNS remains unchanged. Use this URL for the application; the old github.io project path returned 404 in the final check.
-- No additional paid webhosting needed. Domain and email subscriptions remain at Hostinger.
-- The preview uses relative asset URLs and no JS, analytics, forms, checkout or downloads. Search indexing is disabled.
-- Deploy/update introduction: edit `company-preview/`, commit/push, run `gh workflow run company-preview.yml --ref main`, and check DNS/HTTPS and the live page.
-- The full Next.js landing page remains in `src/` and `public/`; its existing launch check still requires a complete legal address. Once the service address is activated, complete `src/site.config.ts`, add `public/CNAME` containing `mrwhisper.site` (used to select the root build path), run `npm run check` and deploy `pages.yml` to replace the introduction. GitHub Actions configures the domain through Pages settings, not through CNAME alone.
-- Claude Startups requires the email and website domain to match: https://claude.com/de/programs/startups. Application submission and program acceptance have not been performed or guaranteed.
+- Hosting: GitHub Pages via `.github/workflows/pages.yml` (manual trigger). Domain/DNS and email remain at Hostinger; no new DNS changes or purchases are needed.
+- `SITE.preview: true`: purchase buttons disabled; prices, sales FAQs and commercial terms hidden. `checkoutUrl` stays empty. No app download links; contact links remain available.
+- Legal pages disclose the pending service address without publishing placeholder or private address data. The notice does not replace a complete statutory legal address.
+- Demo, poster and captions are self-hosted in `public/media/`.
+- `npm run check:preview` checks language parity and requires preview mode, an empty checkout and disabled search indexing. `node scripts/prepare-pages.mjs` copies `company-preview/` into `out/company/` after the static build.
+- The old introduction-only workflow was removed to prevent it from replacing the full landing page. The simple page's source and styling remain unchanged.
+- `public/CNAME` selects the root build path for the existing custom domain. HTTPS is enforced in GitHub Pages settings.
+- Update: edit, run lint/check:preview/build:pages/prepare-pages, review the static output, commit/push and run `gh workflow run pages.yml --ref main`.
+- Before enabling sales, complete the actual legal address, review sales terms and privacy, set `preview: false`, configure checkout, and change the workflow check back to `npm run check`. The commercial launch check remains strict.
+- Claude Startups application fields were prepared; submission or acceptance has not been verified.
 
 ## Develop
 
@@ -35,9 +38,9 @@ NEXT_PUBLIC_BASE_PATH=/mrwhisper-landing npm run build:pages   # static export i
 | `legal.*` | Name, address and email for the legal notice (Impressum), privacy policy and terms. |
 | `indexable` | `false` = `noindex`. Flip to `true` at launch. |
 
-## Publishing is deliberately blocked until the legal data exists
+## Commercial launch remains blocked until the legal data exists
 
-`npm run check` (also run by the workflow) fails while any `legal.*` field still holds `[[TODO]]`. The deploy workflow is manual (`workflow_dispatch`) until launch.
+`npm run check` fails while any `legal.*` field still holds `[[TODO]]`. The deploy workflow is manual (`workflow_dispatch`) until launch.
 
 To go live:
 1. Fill `legal.name`, `legal.street`, `legal.city`, `legal.email` in `src/site.config.ts`.

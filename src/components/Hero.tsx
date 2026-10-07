@@ -146,9 +146,13 @@ export default function Hero({ lang }: { lang: Lang }) {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
+          {SITE.preview ? (
+            <button type="button" disabled className="w-full sm:w-auto px-8 py-4 bg-white/10 text-gray-400 rounded-full font-bold text-lg cursor-not-allowed">{t.preview.soon}</button>
+          ) : (
           <a href="#pricing" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-full font-bold text-lg transition-all shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_44px_rgba(6,182,212,0.6)] hover:-translate-y-0.5">
             {h.ctaPrimary}
           </a>
+          )}
           <a href="#features" className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 rounded-full font-bold text-lg transition-all backdrop-blur-md">
             {h.ctaSecondary(count)}
           </a>

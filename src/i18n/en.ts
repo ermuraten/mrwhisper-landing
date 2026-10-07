@@ -1,9 +1,19 @@
 export const en = {
+  preview: {
+    "soon": "Coming soon",
+    "availability": "Availability",
+    "title": "Meet MrWhisper. Launch is on the way.",
+    "description": "Explore the features and watch the demo. Purchases, licenses and app downloads are not available on this website yet.",
+    "contact": "Contact us",
+    "company": "Company introduction",
+    "pending": "An external legal-notice address is being arranged and will be added after activation. The address information is currently incomplete; this notice does not replace a full legal-notice address.",
+    "terms": "No sales are currently offered on this website. Sales and license terms will be published before purchases become available."
+},
   htmlLang: 'en',
   meta: {
     title: 'MrWhisper – Voice intelligence for your Mac',
     description:
-      'MrWhisper: dictate with a hotkey, transcribed locally, kept as a searchable history with tags, versions, notes and optional AI refinement. One-time purchase.',
+      'MrWhisper: dictate with a hotkey, transcribed locally, kept as a searchable history with tags, versions, notes and optional AI refinement.',
   },
   nav: {
     new: 'New',

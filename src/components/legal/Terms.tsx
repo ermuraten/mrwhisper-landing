@@ -1,3 +1,4 @@
+import { getDict } from '@/i18n';
 import { SITE } from '@/site.config';
 import type { Lang } from '@/lib/lang';
 import { Page, Section } from './Section';
@@ -6,6 +7,14 @@ export default function Terms({ lang }: { lang: Lang }) {
   const L = SITE.legal;
   const months = SITE.updateMonths;
   const days = SITE.refundDays;
+  if (SITE.preview) {
+    return (
+      <Page title={lang === 'de' ? 'Verkaufsstart' : 'Launch status'}>
+        <p>{getDict(lang).preview.terms}</p>
+        <p><a className="text-cyan-300 underline" href={`mailto:${L.email}`}>{L.email}</a></p>
+      </Page>
+    );
+  }
   if (lang === 'de') {
     return (
       <Page title="Nutzungsbedingungen">

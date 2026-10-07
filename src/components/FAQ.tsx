@@ -7,7 +7,7 @@ import type { Lang } from '@/lib/lang';
 
 export default function FAQ({ lang }: { lang: Lang }) {
   const t = getDict(lang).faq;
-  const faqs = t.items.map(f => ({
+  const faqs = t.items.filter(f => !SITE.preview || !/\{months\}|\{days\}/.test(f.answer)).map(f => ({
     question: f.question,
     answer: f.answer.replace('{months}', String(SITE.updateMonths)).replace('{days}', String(SITE.refundDays)),
   }));

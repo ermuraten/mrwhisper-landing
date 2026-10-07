@@ -4,8 +4,22 @@ import { getDict } from '@/i18n';
 
 export default function Pricing({ lang }: { lang: Lang }) {
   const t = getDict(lang).pricing;
-  const live = SITE.checkoutUrl.length > 0;
+  const live = !SITE.preview && SITE.checkoutUrl.length > 0;
   const notifyHref = `mailto:${SITE.legal.email}?subject=${encodeURIComponent('MrWhisper launch')}`;
+  if (SITE.preview) {
+    const p = getDict(lang).preview;
+    return (
+      <section id="pricing" className="py-24 px-6 scroll-mt-24">
+        <div className="container mx-auto max-w-3xl text-center rounded-3xl border border-cyan-400/20 bg-white/[0.025] px-6 py-12">
+          <div className="eyebrow eyebrow-cyan mb-5">{p.availability}</div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-5">{p.title}</h2>
+          <p className="text-gray-400 mb-8 leading-relaxed">{p.description}</p>
+          <button type="button" disabled className="px-8 py-4 rounded-full bg-white/10 text-gray-400 cursor-not-allowed">{p.soon}</button>
+          <a className="block mt-6 text-cyan-300 underline underline-offset-4" href={`mailto:${SITE.legal.email}`}>{p.contact}</a>
+        </div>
+      </section>
+    );
+  }
   return (
     <section id="pricing" className="py-28 px-6 relative scroll-mt-24">
       <div className="container mx-auto max-w-5xl">

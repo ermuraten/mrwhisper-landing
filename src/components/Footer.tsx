@@ -5,6 +5,7 @@ import { getDict } from '@/i18n';
 
 export default function Footer({ lang }: { lang: Lang }) {
   const t = getDict(lang).footer;
+  const p = getDict(lang).preview;
   const other: Lang = lang === 'en' ? 'de' : 'en';
   return (
     <footer className="border-t border-white/10 bg-black/50 py-12 mt-20">
@@ -21,6 +22,7 @@ export default function Footer({ lang }: { lang: Lang }) {
         </div>
 
         <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+          <a href={asset('/company/')} className="hover:text-white transition-colors">{p.company}</a>
           <Link href={href(lang, '/privacy')} className="hover:text-white transition-colors">{t.privacy}</Link>
           <Link href={href(lang, '/terms')} className="hover:text-white transition-colors">{t.terms}</Link>
           <Link href={href(lang, '/imprint')} className="hover:text-white transition-colors">{t.imprint}</Link>

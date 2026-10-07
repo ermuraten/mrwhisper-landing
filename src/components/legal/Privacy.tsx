@@ -1,15 +1,17 @@
+import { getDict } from '@/i18n';
 import { SITE } from '@/site.config';
 import type { Lang } from '@/lib/lang';
 import { Page, Section } from './Section';
 
 export default function Privacy({ lang }: { lang: Lang }) {
   const L = SITE.legal;
-  const controller = `${L.name}, ${L.street}, ${L.city}, ${L.email}`;
+  const controller = SITE.preview ? `${L.name}, ${L.email}` : `${L.name}, ${L.street}, ${L.city}, ${L.email}`;
   if (lang === 'de') {
     return (
       <Page title="Datenschutzerklärung">
         <Section title="Verantwortlicher">
           <p>{controller}</p>
+          {SITE.preview ? <p>{getDict(lang).preview.pending}</p> : null}
         </Section>
         <Section title="Grundsatz">
           <p>
@@ -29,11 +31,13 @@ export default function Privacy({ lang }: { lang: Lang }) {
             Wenn du uns schreibst, verarbeiten wir deine E-Mail-Adresse und den Inhalt deiner Nachricht, um sie zu beantworten (Art. 6 Abs. 1 lit. b oder f DSGVO).
           </p>
         </Section>
+        {SITE.preview ? null : (
         <Section title="Kauf">
           <p>
             Der Verkauf läuft über unseren Merchant of Record Lemon Squeezy. Lemon Squeezy wickelt Zahlung, Umsatzsteuer und Rechnungsstellung ab und verarbeitet deine Zahlungsdaten in eigener Verantwortung nach seiner Datenschutzerklärung. Wir erhalten die für die Lizenzauslieferung nötigen Bestelldaten (zum Beispiel Name, E-Mail-Adresse, Land, Lizenzschlüssel).
           </p>
         </Section>
+        )}
         <Section title="Die App">
           <p>
             Audio und Texte bleiben auf deinem Gerät. Der Audio-Puffer für Flashback liegt nur im Arbeitsspeicher und wird nicht gespeichert. Die App stellt in folgenden Fällen Verbindungen ins Internet her, die dabei deine IP-Adresse an den jeweiligen Anbieter übermitteln:
@@ -59,6 +63,7 @@ export default function Privacy({ lang }: { lang: Lang }) {
     <Page title="Privacy policy">
       <Section title="Controller">
         <p>{controller}</p>
+          {SITE.preview ? <p>{getDict(lang).preview.pending}</p> : null}
       </Section>
       <Section title="Principle">
         <p>
@@ -78,11 +83,13 @@ export default function Privacy({ lang }: { lang: Lang }) {
           If you write to us, we process your email address and the content of your message to answer it (Art. 6(1)(b) or (f) GDPR).
         </p>
       </Section>
+      {SITE.preview ? null : (
       <Section title="Purchases">
         <p>
           Sales are handled by our merchant of record, Lemon Squeezy. Lemon Squeezy processes payment, sales tax/VAT and invoicing and handles your payment data under its own privacy policy. We receive the order data needed to deliver your license (for example name, email address, country, license key).
         </p>
       </Section>
+      )}
       <Section title="The app">
         <p>
           Audio and text stay on your device. The audio buffer used by Flashback exists only in memory and is not saved. The app connects to the internet in these cases, which transmits your IP address to the respective provider:

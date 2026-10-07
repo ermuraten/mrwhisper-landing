@@ -10,7 +10,8 @@
     "check": "node scripts/check-i18n.mjs && node scripts/check-launch-ready.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
     "check:launch": "node scripts/check-launch-ready.mjs",
-    "build:pages": "node scripts/check-i18n.mjs && next build"
+    "build:pages": "node scripts/check-i18n.mjs && next build",
+    "check:preview": "node scripts/check-i18n.mjs && node scripts/check-preview.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

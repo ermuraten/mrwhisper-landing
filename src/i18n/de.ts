@@ -1,11 +1,21 @@
 import type { Dict } from './en';
 
 export const de: Dict = {
+  preview: {
+    "soon": "Bald verfügbar",
+    "availability": "Verfügbarkeit",
+    "title": "Lerne MrWhisper kennen. Der Start folgt.",
+    "description": "Entdecke die Funktionen und sieh dir die Demo an. Käufe, Lizenzen und App-Downloads sind auf dieser Website noch nicht verfügbar.",
+    "contact": "Kontakt aufnehmen",
+    "company": "Unternehmensvorstellung",
+    "pending": "Die Einrichtung einer externen Impressumsadresse ist geplant. Die Anschrift wird nach Freischaltung ergänzt. Die Anbieterangaben sind derzeit hinsichtlich der Anschrift unvollständig. Der Hinweis ersetzt keine vollständige Impressumsanschrift.",
+    "terms": "Auf dieser Website werden derzeit keine Verkäufe angeboten. Verkaufs- und Lizenzbedingungen werden vor Freischaltung des Kaufs veröffentlicht."
+},
   htmlLang: 'de',
   meta: {
     title: 'MrWhisper – Voice Intelligence für deinen Mac',
     description:
-      'MrWhisper: Diktieren per Hotkey, lokal transkribiert, als durchsuchbarer Verlauf mit Tags, Versionen, Notizen und optionaler KI-Veredelung. Einmalkauf.',
+      'MrWhisper: Diktieren per Hotkey, lokal transkribiert, als durchsuchbarer Verlauf mit Tags, Versionen, Notizen und optionaler KI-Veredelung.',
   },
   nav: {
     new: 'Neu',

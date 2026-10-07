@@ -6,6 +6,8 @@ const TODO = '[[TODO]]';
 
 export const SITE = {
   name: 'MrWhisper',
+  /** Public product presentation; checkout, prices and sales terms stay inactive. */
+  preview: true,
   maker: 'Renixa',
   version: '2.17.0',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? '',
@@ -48,5 +50,5 @@ export function asset(path: string): string {
 }
 
 export function checkoutLabel(): boolean {
-  return SITE.checkoutUrl.length > 0;
+  return !SITE.preview && SITE.checkoutUrl.length > 0;
 }

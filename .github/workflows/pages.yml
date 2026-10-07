@@ -19,17 +19,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
-      # Fails while src/site.config.ts still has [[TODO]] legal data or the feature lists differ.
-      - run: npm run check
+      # Public presentation only: checkout disabled, pending legal address disclosed.
+      - run: npm run check:preview
       - name: Build
         run: |
           if [ -f public/CNAME ]; then BASE=""; else BASE="/${GITHUB_REPOSITORY#*/}"; fi
           NEXT_PUBLIC_BASE_PATH="$BASE" npx next build
+      - run: node scripts/prepare-pages.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
