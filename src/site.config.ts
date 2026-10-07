@@ -6,7 +6,7 @@ const TODO = '[[TODO]]';
 
 export const SITE = {
   name: 'MrWhisper',
-  /** Public product presentation; checkout, prices and sales terms stay inactive. */
+  /** Public presentation with planned pricing; checkout and sales terms stay inactive. */
   preview: true,
   maker: 'Renixa',
   version: '2.17.0',

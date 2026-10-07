@@ -8,7 +8,7 @@ The original bilingual landing page is published as a product presentation at ht
 
 - Repository: https://github.com/ermuraten/mrwhisper-landing (public).
 - Hosting: GitHub Pages via `.github/workflows/pages.yml` (manual trigger). Domain/DNS and email remain at Hostinger; no new DNS changes or purchases are needed.
-- `SITE.preview: true`: purchase buttons disabled; prices, sales FAQs and commercial terms hidden. `checkoutUrl` stays empty. No app download links; contact links remain available.
+- `SITE.preview: true`: purchase buttons disabled; planned early-bird pricing is visible (39 € for the first 100 licenses, then 59 €, one-time). A pricing link is available in the hero. Sales FAQs and commercial terms remain hidden. `checkoutUrl` stays empty. No app download links; contact links remain available.
 - Legal pages disclose the pending service address without publishing placeholder or private address data. The notice does not replace a complete statutory legal address.
 - Demo, poster and captions are self-hosted in `public/media/`.
 - `npm run check:preview` checks language parity and requires preview mode, an empty checkout and disabled search indexing. `node scripts/prepare-pages.mjs` copies `company-preview/` into `out/company/` after the static build.

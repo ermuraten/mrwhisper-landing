@@ -13,6 +13,16 @@ export default function Pricing({ lang }: { lang: Lang }) {
         <div className="container mx-auto max-w-3xl text-center rounded-3xl border border-cyan-400/20 bg-white/[0.025] px-6 py-12">
           <div className="eyebrow eyebrow-cyan mb-5">{p.availability}</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-5">{p.title}</h2>
+          <div className="mb-8">
+            <div className="text-sm font-semibold text-amber-300 uppercase tracking-widest mb-3">{t.early}</div>
+            <p className="flex flex-wrap justify-center items-baseline gap-3 mb-3">
+              <span className="text-6xl font-black tracking-tight">{SITE.priceEarly} {SITE.currency}</span>
+              <span className="text-gray-400">{t.perLicense}</span>
+            </p>
+            <p className="text-gray-300">
+              {t.earlyNote(SITE.earlyLimit)} <strong className="text-white">{SITE.priceRegular} {SITE.currency}</strong>
+            </p>
+          </div>
           <p className="text-gray-400 mb-8 leading-relaxed">{p.description}</p>
           <button type="button" disabled className="px-8 py-4 rounded-full bg-white/10 text-gray-400 cursor-not-allowed">{p.soon}</button>
           <a className="block mt-6 text-cyan-300 underline underline-offset-4" href={`mailto:${SITE.legal.email}`}>{p.contact}</a>

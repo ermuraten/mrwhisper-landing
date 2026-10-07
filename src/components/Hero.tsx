@@ -159,6 +159,12 @@ export default function Hero({ lang }: { lang: Lang }) {
         </p>
         <p className="text-sm text-gray-500 mb-10">{h.platformNote}</p>
 
+        {SITE.preview ? (
+          <a href="#pricing" className="inline-block text-sm text-cyan-200 hover:text-white underline underline-offset-4 mb-10">
+            {t.preview.priceSummary(`${SITE.priceEarly} ${SITE.currency}`, `${SITE.priceRegular} ${SITE.currency}`, SITE.earlyLimit)}
+          </a>
+        ) : null}
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left mb-16">
           {h.workflow.map((item, i) => (
             <div key={item.title} className="rounded-2xl border border-cyan-400/15 bg-white/[0.035] p-5">

@@ -1,9 +1,10 @@
 export const en = {
   preview: {
     "soon": "Coming soon",
-    "availability": "Availability",
-    "title": "Meet MrWhisper. Launch is on the way.",
-    "description": "Explore the features and watch the demo. Purchases, licenses and app downloads are not available on this website yet.",
+    "availability": "Pricing",
+    "title": "Planned launch pricing",
+    "description": "Planned one-time purchase. Sales are coming soon; purchases, licenses and app downloads are not available on this website yet.",
+    priceSummary: (early: string, regular: string, limit: number) => `Planned early-bird price: ${early} for the first ${limit} licenses, then ${regular} · See pricing`,
     "contact": "Contact us",
     "company": "Company introduction",
     "pending": "An external legal-notice address is being arranged and will be added after activation. The address information is currently incomplete; this notice does not replace a full legal-notice address.",

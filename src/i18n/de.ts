@@ -3,9 +3,10 @@ import type { Dict } from './en';
 export const de: Dict = {
   preview: {
     "soon": "Bald verfügbar",
-    "availability": "Verfügbarkeit",
-    "title": "Lerne MrWhisper kennen. Der Start folgt.",
-    "description": "Entdecke die Funktionen und sieh dir die Demo an. Käufe, Lizenzen und App-Downloads sind auf dieser Website noch nicht verfügbar.",
+    "availability": "Preise",
+    "title": "Geplanter Einführungspreis",
+    "description": "Geplant ist ein Einmalkauf. Der Verkauf startet bald; Käufe, Lizenzen und App-Downloads sind auf dieser Website noch nicht verfügbar.",
+    priceSummary: (early: string, regular: string, limit: number) => `Geplanter Early-Bird-Preis: ${early} für die ersten ${limit} Lizenzen, danach ${regular} · Preise ansehen`,
     "contact": "Kontakt aufnehmen",
     "company": "Unternehmensvorstellung",
     "pending": "Die Einrichtung einer externen Impressumsadresse ist geplant. Die Anschrift wird nach Freischaltung ergänzt. Die Anbieterangaben sind derzeit hinsichtlich der Anschrift unvollständig. Der Hinweis ersetzt keine vollständige Impressumsanschrift.",
