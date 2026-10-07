@@ -249,6 +249,6 @@ export const de: Dict = {
     langLabel: 'English',
   },
   legalPages: {
-    changelogNote: 'Die Release-Notizen gibt es derzeit nur auf Deutsch.',
+    changelogNote: 'Die Release-Notizen sind auf Deutsch und Englisch verfügbar.',
   },
 };

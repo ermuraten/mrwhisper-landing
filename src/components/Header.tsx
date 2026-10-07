@@ -1,11 +1,11 @@
 import Link from 'next/link';
+import LanguageSwitch from '@/components/LanguageSwitch';
 import { asset, SITE } from '@/site.config';
 import { href, type Lang } from '@/lib/lang';
 import { getDict } from '@/i18n';
 
 export default function Header({ lang }: { lang: Lang }) {
   const t = getDict(lang);
-  const other: Lang = lang === 'en' ? 'de' : 'en';
   return (
     <header className="fixed top-0 w-full z-50 bg-[#0a0f1c]/75 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
@@ -29,9 +29,7 @@ export default function Header({ lang }: { lang: Lang }) {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link href={href(other, '/')} hrefLang={other} lang={other} className="text-sm text-gray-300 hover:text-white transition-colors">
-            {t.nav.switchTo}
-          </Link>
+          <LanguageSwitch lang={lang} className="text-sm text-gray-300 hover:text-white transition-colors">{t.nav.switchTo}</LanguageSwitch>
           {SITE.preview ? (
             <button type="button" disabled className="bg-white/10 text-gray-400 px-3 sm:px-5 py-2 rounded-full text-sm sm:text-base whitespace-nowrap font-semibold cursor-not-allowed">{t.preview.soon}</button>
           ) : (

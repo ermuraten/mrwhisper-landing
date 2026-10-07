@@ -49,6 +49,6 @@ To go live:
 
 ## Notes
 
-- The changelog page is German only (release notes are written in German).
+- The changelog is bilingual: English at `/changelog/`, German at `/de/changelog/`. Language switching preserves the current page. Add matching versions and entries to `src/data/changelog.de.json` and `changelog.en.json`.
 - The legal pages are good-faith drafts, not reviewed by a lawyer.
 - The site loads nothing from third parties: fonts, images and the demo video are self-hosted.

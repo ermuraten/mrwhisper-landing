@@ -1,0 +1,478 @@
+[
+  {
+    "version": "v2.17.0",
+    "date": "6 October 2026",
+    "changes": [
+      "New: Complete English and Turkish interface — All pages, windows, tooltips, status messages, confirmations and export text follow the selected app language: Home, statistics, history, trash, notes assistant, snippets, dictionary, settings, session window, tag picker and changelog interface. Previously, parts of history, Home and settings remained German even when English was selected. The German interface is unchanged.",
+      "Improvement: Dates, times and numbers follow the app language — Entry dates, weekdays, statistics and Markdown/text exports use the selected locale (de-DE, en-GB or tr-TR) instead of fixed German formatting.",
+      "Improvement: Translated default category label — The “Allgemein” tag category is displayed as “General” in English and “Genel” in Turkish. Its stored name remains “Allgemein”; tags, backups and filters are unchanged.",
+      "Maintenance: Centralised, type-checked translations — Around 1,200 strings per language are stored in locales/de.json, en.json and tr.json with matching keys checked through TypeScript. New helpers handle locales, progress status names and refinement templates. At this release, the in-app changelog content, local AI default prompts and main-process messages deliberately remain German."
+    ]
+  },
+  {
+    "version": "v2.16.0",
+    "date": "2 October 2026",
+    "changes": [
+      "New: Persistent trash — Deleted history entries retain their text, title, versions, notes, sources, tags and follow-up prompts. Search, view and restore them individually or together from Trash in the left sidebar. Originals removed during merging are also retained; entries are not automatically deleted after a time limit.",
+      "New: Explicit permanent deletion — Permanently delete selected entries or empty the trash, each with an explicit confirmation. Normal deletion from history remains reversible after restarting.",
+      "Improvement: Trash included in JSON backups — Export and import include archived entries. Older backups do not silently return already archived entries to active history; existing entries are retained.",
+      "Improvement: Visible filter status — History shows whether only open or completed entries are visible and how many entries are hidden. “Show all” clears search and filters. Restored entries and audio imports can be opened directly even when existing filters hide them.",
+      "Fix: Search includes titles — Titles, version metadata and follow-up prompt versions are searched alongside text, notes and sources.",
+      "Fix: Reliable restoration and backup import — Deletion, archiving and restoration are saved together. Undo uses the most recently saved entry. Duplicate IDs within a backup do not create duplicate history entries; ID conflicts during restoration do not overwrite data."
+    ]
+  },
+  {
+    "version": "v2.15.0",
+    "date": "2 October 2026",
+    "changes": [
+      "New: Import long audio and YouTube videos — Audio Import in the title bar transcribes local audio/video files and individual YouTube videos, including recordings lasting several hours. Sections of 15, 30 or 60 seconds run sequentially using the Whisper/Parakeet engine and transcription language selected at the start.",
+      "Improvement: First results immediately — The first completed audio section is transcribed while later sections are still being prepared. You no longer need to wait for the entire recording to be split.",
+      "New: One growing history entry — Each completed section extends the same editable entry. YouTube links are saved as sources; imports get their own entry independently of session mode.",
+      "New: Pause, resume and cancel — Jobs resume from saved progress, including after a restart or error. Completed audio sections are retained. The current section is finished and saved before pausing; cancellation keeps text already saved. After restarting, you start resumption manually.",
+      "New: Progress display on every page — The bottom bar shows total and section counts, prepared and transcribed audio duration, download progress and the current section. Green indicates text, blue prepared audio, grey unfinished sections and gold the current section. Audio preparation progress remains visible during transcription.",
+      "Improvement: Keep working during imports — The app stays usable and multiple imports run sequentially. Normal dictations take priority before the next import section; an ongoing transcription finishes first. The new interface is available in German, English and Turkish.",
+      "Improvement: Reliable saving and local processing — Text and progress are saved together. Completed audio sections are reused when resuming; temporary audio files are cleaned up after completion or cancellation. Transcription runs locally; YouTube downloads require an internet connection.",
+      "Maintenance: Project and build metadata — Author, maintainer and copyright are consistently set to Murat Eren.",
+      "Maintenance: Sales and distribution planning documented — Project notes cover the one-time purchase, planned license activation, public downloads/updates and the “Build in Replay” series. Licensing, automatic updates and signed commercial builds are still planned."
+    ]
+  },
+  {
+    "version": "v2.14.0",
+    "date": "19 September 2026",
+    "changes": [
+      "New: Session mode — The Session button in the title bar controls where every dictation goes: as a follow-up prompt under a main entry, an appended paragraph or a separate entry with fixed tags. The main entry can be the latest entry, one found by title/text/number/ID or a new empty entry filled by your first dictation. Tags carry over automatically, including for manually typed entries.",
+      "New: Saved sessions — Name and save sessions, resume them later with one click and include them in JSON exports. Sessions can optionally continue after restarting.",
+      "New: Session always visible — The main entry has a session badge in history; the voice indicator shows the destination while recording.",
+      "New: Back to top — A button at the bottom right of history returns you to the beginning with one click.",
+      "Improvement: Settings — Export/import is now at the bottom; the new Session Mode section groups session options together."
+    ]
+  },
+  {
+    "version": "v2.13.0",
+    "date": "18 September 2026",
+    "changes": [
+      "New: “Leather & Brass” interface — Settings → Appearance dresses the app in a leather binding with brass fittings: Navy Leather, Brown Leather or Light Leather (Cognac). Grained leather, stitched cards with gold seams, brass corners and an acrylic bookmark with an embossed entry number are rendered rather than stored as images, keeping them sharp at any window size. The familiar look remains available as “Default”.",
+      "New: Minimum entry number size — Numbers on history cards account for their digit count and remain fully visible on short cards. Choose a minimum size in settings.",
+      "New: Installed version in the changelog — The in-app changelog identifies and highlights the installed version. The app now reports version 2.13.0.",
+      "Improvement: History filter window — Adapts to the selected appearance; while open, it prevents accidental movement of the app window.",
+      "Improvement: New website — Expanded feature categories, new updates and workflow sections, and a revised design.",
+      "Maintenance: Design system — Accent and grey tones use central colour values, allowing a few lines to recolour the entire app.",
+      "Fix: Three-digit entry numbers no longer overflow the top of the number column on shorter cards."
+    ]
+  },
+  {
+    "version": "v2.12.0",
+    "date": "13 September 2026",
+    "changes": [
+      "New: In-app changelog — Help → Changelog displays every version as a card with its date, features and fixes, highlights the latest version and can open the online changelog.",
+      "Maintenance: Changelog consistency — A validation script checks that the app and website changelogs have matching versions.",
+      "New: Status mode per entry — Each history card can use a three-step status, percentage slider, checkbox or no status. Settings provide a default; each entry's choice is saved and included in JSON backup export/import.",
+      "New: Entry numbers — Entries show their number within the current view: #1 at the bottom, highest at the top. Search and filters count only matching entries. Visibility is configurable in settings.",
+      "New: Cleaner history cards — A folded corner at the top right contains the lock and coloured status dots. Number, date, time and word count run vertically in the left column with adjustable sizes, keeping the header and footer uncluttered.",
+      "New: Version metadata for text snippets — Snippet versions now have titles, notes, stars and a favourite crown, like history versions.",
+      "Improvement: History opens without delay — History is preloaded and built in stages, making switching feel immediate even with many entries.",
+      "New: Redesigned dictation popup — The post-dictation window has a modern appearance and lets you correct, save and copy recognised text directly.",
+      "New: Heading size — Adjust history heading font size under Settings → Appearance.",
+      "Improvement: Settings with a second column — Opening settings collapses the sidebar and displays settings areas in their own column instead of tabs.",
+      "New: Colourful headings — History titles glow with an animated gradient. Configure the effect, colours including presets, and speed under Settings → Appearance.",
+      "Improvement: Tag window — Draggable, resizable in width and height, and always opens fully on screen.",
+      "New: Redesigned tag management — Create categories, including empty ones; rename and drag to reorder them or nest a main category. Name conflicts offer merging, automatic renaming or a custom name. Deleting a non-empty category asks where its tags should go. All entries update automatically.",
+      "New: Colours for tags and categories — Click to assign a colour; category colours apply to all their tags. A new colour mixer replaces the colour wheel and custom colours stay in place.",
+      "Fix: Categories and tags no longer unexpectedly become lowercase or duplicate. Empty categories are retained, and renaming no longer affects same-named tags in other categories.",
+      "Fix: The MrWhisper window can now be dragged reliably from the centre of its title bar.",
+      "Fix: The tag window is no longer clipped for entries far down the history."
+    ]
+  },
+  {
+    "version": "v2.11.0",
+    "date": "13 September 2026",
+    "changes": [
+      "New: Modern redesign — A new app shell with a grouped, collapsible sidebar (Overview, Workspace, Configuration), a unified design system and smooth transitions.dev animations. Its organisation takes inspiration from FluidVoice while retaining MrWhisper's colours.",
+      "New: Home and statistics — A Today card shows words, saved time and dictations, with animated metrics, a 7/30-day activity chart, milestones and insights into your most active time, weekday, AI usage and frequent tags.",
+      "New: Live speech-processing feedback — The voice indicator, title bar, history and Home animate the current stage: transcribing, translating or inserting.",
+      "Improvement: Organised settings — Nine logical sections with jump navigation, scroll tracking and compact sliders showing values; all existing options remain available.",
+      "New: New history card — Clean cards with a hover action bar and ⋯ menu, or compact expandable rows selectable in settings. Choose whether each of the ten card actions appears in the bar or ⋯ menu.",
+      "New: Copy counter — Copies of entries and follow-up prompts are counted beside the copy icon, saved persistently, included in JSON backups and .md/.txt exports and merged during import. Reset via the tooltip or ⋯ menu.",
+      "New: Animated search fields — Clearing with ✕ or Esc dissolves the search text using transitions.dev's “Input clear with dissolve” animation in history, text snippets and the @-reference dialog.",
+      "Improvement: History opens immediately — Background preloading and caching remove the brief black screen when opening the tab. Searches without results preserve the page's full width.",
+      "Fix: Voice indicator positioning — Position survives fullscreen apps, resolution changes and monitor changes without accounting for the Dock. Drag to the bottom edge; “Unpin” is never clipped. All buttons support dragging, right-drag pins, right-click hides, and startup no longer jumps position.",
+      "Fix: Recording profiles — Voice Isolation and Studio once again save the full profile and filters."
+    ]
+  },
+  {
+    "version": "v2.10.0",
+    "date": "25 August 2026",
+    "changes": [
+      "New: Extended version metadata for main and follow-up prompts — Each version can have its own title, note, 1–5-star rating (⭐) and favourite marker (👑).",
+      "Improvement: Multi-star hover preview and clearing — Hovering over a star, such as star 4, highlights all stars up to it in yellow. Click the assigned star again or ✕ to clear the rating.",
+      "Improvement: Fully remove titles and notes — Clear individual fields or all fields in the details dialog, or remove them in the popover; removals persist in storage.",
+      "New: Golden favourite marker and crown — Favourite versions have gold accents and a 👑 beside their number, with only one favourite per prompt.",
+      "New: Smooth hover action bar — Hover over version badges for a floating menu with a 180 ms buffer, one-click ratings, favourite toggle, renaming and details.",
+      "Improvement: JSON, Markdown and plain-text export — StorageService.ts persists version titles, notes, stars and favourites, including them in JSON backups and .md/.txt exports."
+    ]
+  },
+  {
+    "version": "v2.9.1",
+    "date": "25 August 2026",
+    "changes": [
+      "Fix: Follow-up prompt versioning and persistence — Editing and saving sub-entries with versions, such as v2, stores text permanently in the versions array instead of overwriting it when switching between v1 and v2.",
+      "Improvement: Live synchronisation while editing — Switching versions with the editor open immediately updates the input to the selected version's text.",
+      "Improvement: Backend consistency — StorageService.ts methods updateSubEntry and updateDictationText consistently synchronise the versions array, including direct main-process text updates.",
+      "Maintenance: CI/CD optimisation — Removed unused GitHub Actions build workflows to conserve runner and storage resources."
+    ]
+  },
+  {
+    "version": "v2.9.0",
+    "date": "22 August 2026",
+    "changes": [
+      "New: Task and progress controls for prompts and to-dos — Settings offer three tracking modes: ⚡ three-step status, 🎚️ 0–100% slider, ☑️ checkbox, or disabling tracking. Track progress directly on each history card.",
+      "New: Smooth hover selection bar — A floating action bar above the status button enables quick switching and one-click completion (✅ Done) without interrupting dialogs.",
+      "New: “Almost done” notes popover — Stage 2 opens a popover for notes and reasons, such as remaining AI adjustments or bugs, with quick tags: 🐛 Bug fix needed, 🎨 UI & Styling, ⚡ Performance, 🧪 Still to test, 📐 Game logic.",
+      "Improvement: Colour and glow highlighting — Amber glow and a pulsing dot mark “In progress”, orange marks “Almost done” and emerald green marks “Done”, making active prompts stand out in history.",
+      "New: Tag hover filter bar and display segment selection — Hover over tag labels for [🔍 Only this] exclusive filtering, [➕ Add to filter] combinations and selection of which segment of a hierarchical tag to display, such as “MrWhisper” rather than “TODO” when idle.",
+      "New: Two-way filter reset — Disable filters in the tag hover popover using [✕ Remove from filter] or [🚫 Disable filter], or use the one-click reset in the highlighted active-filter banner above history.",
+      "Improvement: Filter dialog and full-text search — New status filters: In progress, Almost done, Done and No status. Status notes are searchable and included when exporting or copying."
+    ]
+  },
+  {
+    "version": "v2.8.1",
+    "date": "16 August 2026",
+    "changes": [
+      "New: Export individual history entries as .md or .txt — Save each entry as formatted Markdown or text through the native system save dialog.",
+      "Improvement: Structured export contents — Includes title, metadata (date, tags, priority), main text, all versions, notes, sources and nested follow-up prompts.",
+      "Improvement: Filter dialog — Width increased to 820 px, taller default columns and a horizontal drag handle for resizing the tag/category list."
+    ]
+  },
+  {
+    "version": "v2.8.0",
+    "date": "16 August 2026",
+    "changes": [
+      "New: Parent-folder and category filtering — Selecting a parent folder includes all child tags and subcategories in the filter.",
+      "Improvement: Hierarchical matching — History matches filters against categories, subcategories and legacy tags, such as “MrWhisper > TODO”.",
+      "Improvement: Batch tag toggling — Clicking a category checkbox updates all its tags in one atomic state update."
+    ]
+  },
+  {
+    "version": "v2.7.0",
+    "date": "30 July 2026",
+    "changes": [
+      "New: Manual versions for history entries and follow-up prompts — A [+ ➕ Version] button in main-entry action bars and follow-up prompt headers creates additional text variants.",
+      "New: Complete version model for follow-up prompts — Sub-entries have versions and activeVersionId, switching badges (v1, v2…), double-click renaming and deletion (×). AI refinements automatically create new versions.",
+      "Improvement: Hide redundant version bars and optionally copy text — Bars are hidden when only one version exists. “Copy previous text into new version” controls prefilling.",
+      "New: Collapsible follow-up prompt input — Collapsed by default into a compact “+ Add follow-up prompt” button; clicking opens and focuses the input."
+    ]
+  },
+  {
+    "version": "v2.6.0",
+    "date": "29 July 2026",
+    "changes": [
+      "Smooth, reliable indicator dragging — A new main-process cursor polling engine (screen.getCursorScreenPoint at 60 fps) removes interruptions and sticking during right-click dragging, prevents pixel jumps on macOS and allows positioning at the bottom screen edge.",
+      "Performance and RAM leak fixes for settings sliders — Smooth 60 fps layout sliders. Selective IPC reinitialisation avoids unnecessary Whisper/audio service restarts and eliminates RAM spikes.",
+      "Improvement: Dock distance and tag dialog clipping protection — Vertical positioning uses tagPromptBottomOffset to place the window precisely above the macOS Dock.",
+      "New: Dynamic textareas and text selection for snippets — Select text freely on snippet cards through userSelect; input fields adapt automatically to the screen edge.",
+      "Improvement: Punctuation-tolerant snippet and dictionary matching — normalizeText ignores punctuation appended by speech AI, such as the period in “Commit and Push.”"
+    ]
+  },
+  {
+    "version": "v2.5.0",
+    "date": "28 July 2026",
+    "changes": [
+      "New: Multilingual system using i18next and react-i18next — An i18n architecture with full compile-time TypeScript key validation through module augmentation.",
+      "New: Structured localisation dictionaries — Comprehensive German 🇩🇪, English 🇬🇧 and Turkish 🇹🇷 language packs in locales/de.json, en.json and tr.json.",
+      "New: Live language switching and settings integration — App Language in settings updates the interface and notifications immediately without restarting.",
+      "Improvement: Electron main-process localisation — I18nMainService.ts supplies native notifications, tray menus and OS dialogs dynamically in the selected language."
+    ]
+  },
+  {
+    "version": "v2.4.0",
+    "date": "27 July 2026",
+    "changes": [
+      "New: Post-dictation quick-tagging popup — A floating popup appears at the bottom of the voice indicator after dictation for immediate tagging, with preview, badges and a countdown bar.",
+      "New: Dynamic window scaling — The resize-indicator-window IPC channel smoothly expands the frameless Electron indicator from 73 px to 260 px, anchored at the bottom screen edge.",
+      "Improvement: Settings and timing — enablePostDictationTagPicker toggles the feature; postDictationTagPickerDuration sets 2–30 seconds, with a 6-second default."
+    ]
+  },
+  {
+    "version": "v2.3.0",
+    "date": "26 July 2026",
+    "changes": [
+      "New: Assign stars to new entries — The interactive StarRating component in the new-entry input lets you set 1–5 stars before submitting.",
+      "New: Snippet versions and active trigger execution — Multiple versions per snippet (v1, v2, Formal, English) with interactive badges; speaking the trigger inserts the currently active version."
+    ]
+  },
+  {
+    "version": "v2.2.0",
+    "date": "25 July 2026",
+    "changes": [
+      "New: Redesigned tag filter with a two-column category tree — CategorizedTagFilter now uses CategorizedTagPicker's hierarchical layout: categories and subfolders on the left, tags on the right, with inclusion/exclusion filtering and reset.",
+      "New: Grey display and trash action for unassigned tags — Inactive tags appear grey with a 🗑️ delete icon; unused tag colours are cleaned up automatically.",
+      "New: Interactive tag deletion/replacement dialog — TagDeleteModal shows how many dictations use the tag and offers “Replace & Delete” or deletion without replacement.",
+      "New: Undo for tag deletion — Restore a deleted tag immediately through the global Undo toast at the bottom of the screen.",
+      "Improvement: Body-level portal stacking and popovers — Tag deletion dialogs and Undo toasts use zIndex 10000000. Central closeAllTagPickers/openTagPicker state management prevents overlapping pickers and keeps the close button functional."
+    ]
+  },
+  {
+    "version": "v2.1.0",
+    "date": "24 July 2026",
+    "changes": [
+      "New: Draggable, resizable linking window — Move the @-linking menu by its title bar and resize from the bottom-right corner (◢). By default it displays four full result cards in the main workspace.",
+      "Fix: Separate main-entry editing from follow-up prompts — Clicking Edit or the main text leaves the follow-up prompt input below empty as intended.",
+      "Improvement: Preserve status filters during link navigation — Clicking linked entries keeps the active/open-only status filter when the target entry is open.",
+      "Improvement: Clean up obsolete ghost tags — Outdated or unused tags no longer appear as grey ghost entries in the tag filter dialog.",
+      "New: AI refinement for follow-up prompts — Each sub-entry has its own 🪄 Refine button with preset chips and custom instructions, just like the main entry.",
+      "New: Expanded @-mentions and linking — Typing @ in main or follow-up prompts opens an interactive search overlay with autocomplete, tag colours, side-by-side full-text preview and collision protection.",
+      "New: Precise navigation and back stack — Clicking a link badge resolves the target ID, expands sub-entries and highlights the target card. A fixed Back button returns to the previous position.",
+      "New: Navigation behaviour setting — Choose between 🌊 Smooth scrolling and ⚡ Direct jump.",
+      "New: Click main text to edit — Clicking the body text of a main entry immediately opens its editor.",
+      "New: Live search in the tag picker — Typing in category and tag inputs filters existing trees in real time.",
+      "Improvement: Fast-path scrolling for large histories — Frame-0 DOM scrolling removes navigation delays with more than 1,200 entries.",
+      "Improvement: WCAG 2.1 tag contrast calculation — getContrastTextColor chooses black or white text for HSL, RGB and hex colours to maximise readability."
+    ]
+  },
+  {
+    "version": "v1.9.0",
+    "date": "21 July 2026",
+    "changes": [
+      "New: Pointer drag-and-drop for tags and categories — Replaces native HTML5 drag-and-drop with onPointerDown/onPointerMove/onPointerUp handling, eliminating snap-back on macOS trackpads.",
+      "Improvement: Floating preview badge and folder highlighting — Dragging a tag shows a moving 🏷️ preview badge and highlights target folders green with “📁 Drop here”.",
+      "Improvement: Immediate reassignment and folder switching — Dropping a tag switches the picker to its target folder and applies localCategoryOverrides so tags remain visible immediately.",
+      "Improvement: Body-level React portal and viewport collision protection — CategorizedTagPicker uses createPortal to avoid clipping by container overflow and dynamically position at screen edges.",
+      "Improvement: Cross-category overview and independent search — selectedCategory initially equals null to show all tags together. Category search is independent of tag filtering.",
+      "Improvement: Case-insensitive tag deduplication and 100-colour grid — Tags and tagColors ignore case; the picker uses a 20×5 grid of curated colours.",
+      "Improvement: Global tag renaming and IPC sync — Case-insensitive paths and legacy tag renaming update state, localStorage (mrwhisper_tag_colors) and IPC methods updateDictationCategories/updateSnippetCategories.",
+      "New: Nested categories and inline subfolder input — Two-level category trees. The upper input creates main categories; [+ Sub] on active folders opens an indented subfolder input.",
+      "New: Inline tag renaming — Double-click a tag or use ✏️ in the picker; names synchronise with the database and colour preferences.",
+      "Fix: Seamless tag replacement during drag-and-drop — Moving an assigned tag to another category atomically replaces the old tag, preventing duplicates in the top bar.",
+      "Improvement: Reset filters when creating entries — Active tag filters are cleared when adding dictations so new content immediately appears at the top."
+    ]
+  },
+  {
+    "version": "v1.8.1",
+    "date": "18 July 2026",
+    "changes": [
+      "Improvement: Removed history limit — The artificial 1,000-entry cap in StorageService.ts and ExportImportService.ts is removed. History dictations are no longer automatically deleted, allowing unlimited, persistent local archiving."
+    ]
+  },
+  {
+    "version": "v1.8.0",
+    "date": "15 July 2026",
+    "changes": [
+      "New: Local AI headings in the background — TitleGenerationService.ts runs a background process to generate concise headings for every untitled history entry.",
+      "New: AI heading control panel — A collapsible history panel shows real-time progress and controls to start, stop and resume background generation.",
+      "New: Card titles and regeneration — Generated titles appear prominently in bold; 🪄 regenerates or creates an individual heading.",
+      "New: Heading language selection — titleLanguage in settings offers Automatic, German, English, Turkish, Spanish and French.",
+      "Improvement: Prompts and reliability — A German system prompt with clear examples prevents direct answers to dictated questions. temperature 0.3, max_tokens 15 and a newline stop condition prevent continued generation.",
+      "Improvement: Stability for reasoning models such as Bonsai — Heading generation uses the raw /completion endpoint with a prefilled, closed <think> tag, avoiding stalls, token exhaustion and unnecessary output.",
+      "Improvement: Refinement and translation — Main-process token limit increased from 2048 to 3500 to avoid truncating long notes.",
+      "Improvement: Assistant prefill in chat requests — A prefilled <think> block for Bonsai/R1 bypasses slow reasoning, reducing generation from minutes to seconds. Remaining <think> tags are removed by regex.",
+      "Improvement: Automatic unload guard — The inactivity timer checks for ongoing generation, delays unloading and starts counting inactivity only after a request finishes.",
+      "Improvement: Next.js SSR production build — Guards around window.electronAPI in chat.tsx fix “window is not defined”, enabling optimised builds and app packaging.",
+      "Improvement: Model detection across directories — Both TEST_DIR_SMALL and TEST_DIR_BIG are checked for existing models, such as Qwen 2.5 7B Instruct, regardless of storage location.",
+      "Improvement: Multi-select stacking and layout — Moving the stacking context above #main-scroll-container with zIndex 200 keeps the bar above the title bar; it sits lower and horizontally centred.",
+      "New: Manually edit and add headings — Double-click a title or use ✏️ to edit; untitled entries can be given a title manually.",
+      "New: AI heading filters and controls — Choose untitled entries only or overwrite existing titles. The panel's live prompt editor synchronises with global settings.",
+      "Improvement: Title generator error handling — Model loading errors appear as a red banner in history; additional validation prevents empty runs.",
+      "Improvement: Persistent custom model selection — Settings store the last GGUF model path so the background generator reliably starts the selected model.",
+      "New: Bonsai-27B and Ternary-Bonsai-27B presets — Adds Apache-2.0-licensed GGUF models Bonsai 27B (1-bit, about 3.9 GB) and Ternary Bonsai 27B (about 5.9 GB), downloadable to the external drive.",
+      "New: Local AI chat with live streaming — A sidebar chat tab provides automatic scrolling, an animated typing indicator and copyable responses. It supports word-by-word Server-Sent Events streaming and in-app Llama server controls.",
+      "New: Main-process ChatService and session persistence — Chat and generation state persist through tab changes; conversation history is stored permanently through Electron Store.",
+      "Improvement: Llama server build b10012 — Updates bundled binaries and dynamic libraries to b10012, fixing quantisation type 41 compatibility (for example Bonsai Q1_0/Q2_0) and reliably loading highly compressed models."
+    ]
+  },
+  {
+    "version": "v1.7.0",
+    "date": "14 July 2026",
+    "changes": [
+      "New: Copy with notes and sources — Copying individual or multiple entries includes formatted linked notes and source URLs below the text. A “---” separator divides multiple entries.",
+      "New: Tab and route persistence — localStorage remembers the last main tab, such as History or Settings, and opens it on restart.",
+      "New: Persistent filters and search — Search text, included/excluded tags, completion status, minimum priority, lock state and note/source filters survive tab changes and restarts through localStorage.",
+      "New: Scroll position persistence — History's vertical position is restored when returning, including after restarting the app.",
+      "New: Smooth global page transitions — An 80 ms fadeInGlobal CSS animation in the layout fades page content in without flickering during navigation.",
+      "Improvement: Jump-free history loading — Hydration-safe initialisation with isScrollRestored=false hides history during loading and scroll restoration, then reveals it synchronously once restoration finishes."
+    ]
+  },
+  {
+    "version": "v1.6.0",
+    "date": "13 July 2026",
+    "changes": [
+      "New: Unified Undo — Undo now covers all destructive operations: deletion, bulk deletion and merging.",
+      "New: Notes and sources — Each history entry has a collapsible section for optional notes and clickable source links.",
+      "New: Smart edit/read mode — Empty drawers open for editing; populated drawers open in read mode so links can be clicked immediately.",
+      "New: Global expand/collapse button — Expand or collapse all entries together; empty entries are skipped automatically.",
+      "New: Drag-and-drop support — Drop browser links onto history entries as sources or into the compose area to create a new source/card.",
+      "New: Compose with notes and sources — Add notes and sources directly when creating an entry.",
+      "New: MrWhisper project age — A Home tile shows days since the project's start on 29 May 2026, styled in indigo (#818cf8).",
+      "New: Total speaking time and balanced dashboard — An eighth metric shows total dictation time. Home and Insights use a symmetrical four-column, 4×2 grid. Compact durations such as “2h 10m” and smaller card titles avoid line breaks.",
+      "Improvement: ASR service controls and performance — Cleaning up zombie processes on port 8081 before Whisper starts enables Metal GPU inference of approximately one second.",
+      "Improvement: Reliable ASR engine switching — Choosing Whisper or Parakeet in settings reliably starts/stops the appropriate background services.",
+      "Improvement: Expanded history search — Live search also covers linked notes and sources.",
+      "Improvement: Note and source filters — Filter entries by whether they have notes and sources.",
+      "Improvement: Scrollable filter dialog and reset — The advanced search dialog scrolls vertically on short screens and correctly resets note/source filters."
+    ]
+  },
+  {
+    "version": "v1.5.0",
+    "date": "13 July 2026",
+    "changes": [
+      "New: Lock history entries — A Lock/Unlock icon protects each entry from accidental deletion.",
+      "New: Locked entries cannot be deleted — Bulk deletion and automatic cleanup at the then-current 1,000-entry JSON limit skip locked entries.",
+      "New: Lock state included in backups — JSON export/import preserves the lock state.",
+      "New: Lock filter — Advanced search offers All, Locked only and Unlocked only.",
+      "New: Global tag colours — Adjust colours on tag pills with the embedded colour picker.",
+      "Improvement: Automatic text contrast — YIQ brightness selects light or dark tag text for legibility and accessibility.",
+      "Improvement: Floating multi-select bar — Stays at the top of the app while scrolling history.",
+      "Fix: no-drag on the multi-select menu prevents the Electron title bar's drag region from intercepting clicks.",
+      "Improvement: History card layout — Actions (complete, copy, edit, refine, lock, delete) move above metadata."
+    ]
+  },
+  {
+    "version": "v1.4.0",
+    "date": "11 July 2026",
+    "changes": [
+      "New: Real-time dictation — Insert text word by word or use sentence-by-sentence live preview.",
+      "New: Real-time audio segmentation — Silero VAD splits the incoming audio stream.",
+      "New: Live microphone level — MicLevelMeter visualises input directly in the interface.",
+      "New: Central LatencyTracker — Logs audio IPC, WAV creation and ASR inference timings as [LATENCY_METRIC] in /tmp/mrwhisper.log.",
+      "Improvement: Persistent Parakeet daemon — An interactive-server backend reduces startup/inference latency from 18 seconds to 130 milliseconds.",
+      "Improvement: Indicator loading dots — Three model-loading dots scale to 10.4 px (8 × scale) for visibility on Retina displays.",
+      "Fix: Eight-second safety timeout — Handles stalled Parakeet inference, such as ANE locks.",
+      "Fix: Recording resource release — A five-second lock timeout in the stop routine prevents GUI freezes when releasing the hotkey.",
+      "Fix: Pending callbacks discarded — Unexpected daemon crashes clear all pending startup and inference callbacks."
+    ]
+  },
+  {
+    "version": "v1.3.0",
+    "date": "June 2026",
+    "changes": [
+      "New: Automatic translation into English — A settings option translates dictated text using a loaded refinement model. If the model is inactive, dictation transparently falls back to the original language with an OS notification.",
+      "New: English quick chip — The 🇬🇧 chip in history's refinement menu translates existing dictations with one click.",
+      "Improvement: Seamless infinite scrolling — IntersectionObserver loads 60 additional entries at a time, avoiding interface loading delays even with thousands of entries.",
+      "Improvement: Refinement prompts — Custom history instructions are improved for accurate interpretation and translation by local language models.",
+      "New: History as a to-do list — Completion checkboxes and a five-star priority system with left/right-click actions. Completed tasks are no longer shown with strikethrough.",
+      "New: History multi-select and bulk actions — Select dictations with checkboxes, copy them together or delete them together after confirmation.",
+      "New: Undo completion changes — A temporary toast restores completed or reactivated tasks.",
+      "New: Platform-aware hotkey labels — Show Fn on macOS and Shift+Win+Space on Windows.",
+      "New: Copy all — Copy the text of all currently filtered dictations in history.",
+      "New: Advanced history filters — Filter by status, included/excluded tags and minimum priority.",
+      "New: JSON export/import — Settings, history, snippets and dictionary use intelligent deduplication and merging.",
+      "New: Draggable voice indicator — Move the indicator freely around the screen.",
+      "New: Automatic re-centring countdown — After an adjustable delay, an eased animation returns the indicator to the centre.",
+      "New: Countdown and fade settings — Toggle the floating re-centring countdown text and adjust its fade duration.",
+      "New: Pin while dragging — Right-click while holding the left mouse button to pin the indicator. A lock overlay shows its state and releases it when clicked.",
+      "New: Live WebGL waveform — Reacts to microphone input during dictation.",
+      "New: Dynamic indicator positioning — Monitor connections/disconnections and resolution changes realign it at the bottom centre above the main monitor's Dock without restarting.",
+      "Improvement: Chronological history copying — Text is copied oldest first by default for a more natural reading order.",
+      "Improvement: Direct settings navigation — The title bar gear opens the settings page.",
+      "Improvement: Longer Whisper inference timeout — Increased to 10 minutes for very long dictations.",
+      "Improvement: Recording lifecycle — Prevents hanging when stopping during initialisation.",
+      "Improvement: Packaged tray icon paths — Uses the process resources path reliably.",
+      "Improvement: Duplicate whitespace cleanup — Removes repeated spaces before saving dictation, including migration of existing text.",
+      "Improvement: Multiple snippet triggers — Like dictionary entries, snippets accept triggers separated by commas or semicolons.",
+      "Improvement: Temporarily hide the indicator — Right-click softly fades the text overlay and automatically returns it after the countdown.",
+      "Improvement: Immediate hiding without countdown — When countdown is disabled, right-click instantly hides the indicator and its breathing line, waveform and buttons without fading.",
+      "Improvement: Indicator interface and performance — Various optimisations to its rendering pipeline.",
+      "Improvement: Eleven audio feedback sets — Choose between 11 start/stop sound sets.",
+      "Improvement: Separate sound volumes — Adjust recording start and stop volumes independently in settings.",
+      "Improvement: Clipboard restoration — Inserting text through MrWhisper automatically restores the previous clipboard contents.",
+      "Fix: Copy buttons — Updated clipboard permissions make copying work in History, Snippets and Dictionary.",
+      "Fix: Visible recording countdown — The counter remains visible during active recording.",
+      "Fix: Reliable record button clicks — Native onClick handling prevents CSS animations from swallowing clicks.",
+      "Improvement: Countdown X action — Resets the indicator to its original position instead of hiding it.",
+      "Fix: Preserve keyboard focus — Indicator clicks no longer steal focus from active text fields.",
+      "Fix (macOS): Fullscreen video hiding — Reliably detects fullscreen browser videos, including YouTube/Netflix, through the accessibility tree without JavaScript AppleEvents.",
+      "Fix (macOS): VLC and other media players — Checks all process windows, including embedded video windows, with case-insensitive app matching and bundle-ID identification such as org.videolan.vlc.",
+      "Fix: Hover state after re-centring — Resets isHovering so hover does not remain stuck after automatic movement.",
+      "New: Interactive inline tagging — Assign new categories directly on preview chips and in the editing dialog.",
+      "New: Consistent suggestion dropdown — A grey React dropdown opens when the input receives focus and filters all existing tags.",
+      "New: System-wide text context menus — Undo, redo, cut, copy, paste and select all for text fields, plus copying selected text.",
+      "New: Cancel AI splitting — “Cancel splitting” stops an ongoing split from its loading screen.",
+      "New: Select history text directly — Highlight and copy text with the mouse without entering edit mode.",
+      "Improvement: Unlimited refinement time — Removes fixed HTTP timeouts for language-model processing.",
+      "Improvement: Larger Llama context — Slot optimisation (np 1 instead of np 2) makes all 4096 tokens available.",
+      "Improvement: Refinement output limit — Increased to 2048 tokens to avoid truncated text.",
+      "Improvement: Persistent preview chips — localStorage retains generated chips through history tab changes.",
+      "Fix: Model-loading app crash — Excludes the app's own process ID from port cleanup to prevent termination during refinement model loading.",
+      "Fix: Llama server packaging — Corrects cross-platform paths for .exe, .dylib, .dll and .so files in the packaged DMG.",
+      "New: History text versions — Refinement creates variants such as summaries or commit messages, selectable through badges.",
+      "New: Rename and delete versions — Double-click to rename history versions; deletion options are also available.",
+      "New: Entry origin icons — Microphone for speech, keyboard for typed text and magic wand for refined text.",
+      "New: Bulk merge — Combine selected entries' text and tags.",
+      "New: Persistent version origin icon — Switching the active version updates and saves the entry's origin icon.",
+      "New: Search clear button — A circular X inside the history search field clears the filter text with one click.",
+      "Improvement: Collapsible new-entry input — An empty, unfocused textarea collapses to one 36 px line, while active writing retains the user's resized height.",
+      "Improvement: Clear stale preview chips — Switching to the AI Split tab resets obsolete chips.",
+      "Fix: Correct keyboard icon — Manually typed entries show the keyboard icon instead of an AI icon unless an AI split was performed."
+    ]
+  },
+  {
+    "version": "v1.2.0",
+    "date": "June 2026",
+    "changes": [
+      "New: Hands-free voice activation — “Computer” or “Hör zu” activates a local Sherpa ONNX model with Silero VAD.",
+      "New: Statistics dashboard — Insights shows time saved, words per minute and average words per dictation.",
+      "New: Automatic language detection — Includes dedicated Turkish language selection.",
+      "New: History categories and paste — Tags organise history; a Paste button inserts entries directly at the cursor.",
+      "New: Snippet tag search — Find and assign tags directly in the interface.",
+      "Improvement: Dictation lock — Hybrid activation avoids conflicts between the Fn key and voice commands.",
+      "Improvement: Tuned VAD — Thresholds and audio padding improve short-command recognition.",
+      "Improvement: Audio services after sleep — Automatically restart when the Mac wakes.",
+      "Improvement: Multi-word replacements — Copy/edit actions are available directly in Snippets and Dictionary.",
+      "Fix: Language-specific initial prompts — Prevent unwanted text/spacing such as “Yeah.” or “Thank you.” during silence.",
+      "Fix: Wake-word performance — Reduces background CPU usage."
+    ]
+  },
+  {
+    "version": "v1.1.0",
+    "date": "May 2026",
+    "changes": [
+      "New: Llama.cpp and Whisper server controls — Status polling automatically displays model loading in the voice indicator.",
+      "New: Bundled ffmpeg-static — Works out of the box without Homebrew.",
+      "Improvement: Whisper server startup — Timeout increased to 60 seconds, with detailed logging in /tmp/mrwhisper.log.",
+      "Improvement: Default indicator layout — Optimised scale 1.3, offset −24 px and button scale 1.1.",
+      "Fix: Whisper status polling on mount.",
+      "Fix: Ignore OS key repeats while holding Fn to prevent dictation flicker."
+    ]
+  },
+  {
+    "version": "v1.0.9",
+    "date": "May 2026",
+    "changes": [
+      "Improvement: Local Whisper server is included directly in the final build.",
+      "Fix: Removed excessive wake-word detection console logging."
+    ]
+  },
+  {
+    "version": "v1.0.7",
+    "date": "May 2026",
+    "changes": [
+      "New: An eighth audio feedback set for recording start/stop.",
+      "Improvement: Synchronisation between interface state and the physical Fn key.",
+      "Improvement: Hide the main window before inserting text, returning focus to the active app.",
+      "Fix: Native Swift mac-fn-helper with CGEventTap prevents missed Fn events during quick double taps.",
+      "Fix: Automatically request macOS accessibility permissions.",
+      "Fix: Prevent Fn clicks from triggering macOS's default language switcher."
+    ]
+  },
+  {
+    "version": "v1.0.3",
+    "date": "May 2026",
+    "changes": [
+      "New: Universal macOS builds for arm64 and x64.",
+      "New: Standardised resources/icon.icns and Windows icon assets.",
+      "Fix: Adjusted macOS Hardened Runtime configuration to address Gatekeeper errors on Apple Silicon.",
+      "Fix: Corrected Sharp bindings for x64 architectures."
+    ]
+  },
+  {
+    "version": "v1.0.0",
+    "date": "April 2026",
+    "changes": [
+      "Initial MrWhisper release.",
+      "Local transcription through Whisper.cpp and Llama.cpp.",
+      "Support for macOS and Windows.",
+      "Global Fn hotkey for voice control.",
+      "Glassmorphic dark mode and Tailwind interface integration.",
+      "Built-in text replacements with Dictionary and Snippets."
+    ]
+  }
+]

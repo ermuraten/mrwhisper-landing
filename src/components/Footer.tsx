@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import LanguageSwitch from '@/components/LanguageSwitch';
 import { asset, SITE } from '@/site.config';
 import { href, type Lang } from '@/lib/lang';
 import { getDict } from '@/i18n';
@@ -6,7 +7,6 @@ import { getDict } from '@/i18n';
 export default function Footer({ lang }: { lang: Lang }) {
   const t = getDict(lang).footer;
   const p = getDict(lang).preview;
-  const other: Lang = lang === 'en' ? 'de' : 'en';
   return (
     <footer className="border-t border-white/10 bg-black/50 py-12 mt-20">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -27,7 +27,7 @@ export default function Footer({ lang }: { lang: Lang }) {
           <Link href={href(lang, '/terms')} className="hover:text-white transition-colors">{t.terms}</Link>
           <Link href={href(lang, '/imprint')} className="hover:text-white transition-colors">{t.imprint}</Link>
           <Link href={href(lang, '/changelog')} className="hover:text-white transition-colors">{t.changelog}</Link>
-          <Link href={href(other, '/')} hrefLang={other} lang={other} className="hover:text-white transition-colors">{t.langLabel}</Link>
+          <LanguageSwitch lang={lang} className="hover:text-white transition-colors">{t.langLabel}</LanguageSwitch>
         </div>
       </div>
     </footer>

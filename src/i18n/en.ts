@@ -122,7 +122,7 @@ export const en = {
     topHint: 'One click instead of long scrolling',
     detailsBefore: 'All details in the',
     detailsLink: 'changelog',
-    detailsNote: ' (currently German only)',
+    detailsNote: '',
   },
   how: {
     eyebrow: '⚡ How it works',
@@ -247,7 +247,7 @@ export const en = {
     langLabel: 'Deutsch',
   },
   legalPages: {
-    changelogNote: 'The release notes are currently available in German only.',
+    changelogNote: 'Release notes are available in English and German.',
   },
 };
 
