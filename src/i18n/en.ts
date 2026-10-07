@@ -11,9 +11,9 @@ export const en = {
 },
   htmlLang: 'en',
   meta: {
-    title: 'MrWhisper – Voice intelligence for your Mac',
+    title: 'MrWhisper – Voice-to-prompt workspace for developers',
     description:
-      'MrWhisper: dictate with a hotkey, transcribed locally, kept as a searchable history with tags, versions, notes and optional AI refinement.',
+      'A voice-to-prompt workspace for vibe coders, developers and power users: connected prompts, follow-ups, versions and task progress, with local transcription.',
   },
   nav: {
     demo: 'Demo',
@@ -29,16 +29,23 @@ export const en = {
   hero: {
     badgeText: 'Trash: keep deleted entries and restore them anytime',
     titleA: 'Your voice.',
-    titleB: 'Your second memory.',
+    titleB: 'Your prompt workspace.',
+    audience: 'For vibe coders, developers & power users',
+    description: 'Turn spoken ideas into connected prompts and tasks. Organise main and follow-up prompts, keep versions and track each task with status, percentage or checkbox.',
     leadBefore: 'Press',
     leadAfter:
-      'and speak, and the text appears right where your cursor is. MrWhisper transcribes locally, files every dictation into a searchable history with tags, versions and notes, and polishes it with AI on request. Transcription needs no cloud.',
+      'to dictate into any text field. Transcription runs locally with Whisper or Parakeet.',
     highlights: [
-      { icon: '🎙️', text: 'Local transcription: Whisper & Parakeet' },
-      { icon: '⚡', text: 'Global hotkey: text at your cursor' },
-      { icon: '⏪', text: 'Flashback brings back what you just said' },
-      { icon: '🏷️', text: 'Tag catalog with real folders' },
-      { icon: '🌍', text: 'English · Deutsch · Türkçe' },
+      { icon: '↳', text: 'Main & follow-up prompts' },
+      { icon: '@', text: 'Links between prompts' },
+      { icon: '⏪', text: 'Version history' },
+      { icon: '✓', text: '3 ways to track progress' },
+    ],
+    workflow: [
+      { title: 'Structure your thinking', description: 'Keep an idea as a main prompt and develop it with follow-up prompts. Tags, notes and sources keep the context together.' },
+      { title: 'Connect your prompts', description: 'Use @-mentions to link entries and follow-up prompts. Preview a reference and jump back to the original.' },
+      { title: 'Keep your versions', description: 'Save alternatives as v1, v2, v3 … for entries and follow-up prompts, with notes, ratings and a favourite version.' },
+      { title: 'Track each task', description: 'Choose a three-step status, a percentage slider or a checkbox per entry. Filter your history by task status.' },
     ],
     ctaPrimary: 'Get MrWhisper',
     ctaSecondary: (n: number) => `See all ${n} features`,
@@ -52,9 +59,9 @@ export const en = {
     transcribing: 'Transcribing …',
     ready: '● AI ready',
     card1Tags: ['Apps › Codex', 'Idea'],
-    card1Title: 'Second brain with Codex',
+    card1Title: 'Plan the next feature for my app',
     card1Text:
-      'With Codex I eventually want to build this second-brain thing for my music, my apps and my marketing.',
+      'Main prompt: sketch the feature. Follow-up prompts: refine the UI, connect related ideas and keep the next version.',
     card1Notes: '📝 Notes & sources',
     card1Followups: '↳ Follow-up prompts (2)',
     card1Status: 'In progress',

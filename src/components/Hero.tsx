@@ -116,25 +116,15 @@ export default function Hero({ lang }: { lang: Lang }) {
       <div className="absolute inset-0 bg-grid pointer-events-none -z-10" />
 
       <div className="container mx-auto text-center max-w-5xl">
-        <Link
-          href={href(lang, '/changelog')}
-          className="inline-flex flex-wrap justify-center items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-amber-400/30 text-sm text-gray-200 mb-8 backdrop-blur-md transition-all duration-300 hover:scale-[1.03] shadow-[0_0_24px_rgba(213,165,64,0.18)] group"
-        >
-          <span className="flex h-2 w-2 rounded-full bg-amber-300 animate-pulse" />
-          <span className="font-semibold text-amber-200">✨ v{SITE.version}:</span>
-          <span className="text-gray-300 group-hover:text-white transition-colors">{h.badgeText}</span>
-          <span className="text-xs text-amber-300 group-hover:translate-x-0.5 transition-transform">→</span>
-        </Link>
+        <p className="text-sm sm:text-base font-semibold text-cyan-200 mb-5">{h.audience}</p>
 
-        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-7 leading-[1.05]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black tracking-tight mb-7 leading-[1.05]">
           {h.titleA}<br />
           <span className="text-gradient">{h.titleB}</span>
         </h1>
 
         <p className="text-lg md:text-2xl text-gray-300 mb-9 max-w-3xl mx-auto leading-relaxed font-light">
-          {h.leadBefore}{' '}
-          <kbd className="px-2 py-0.5 bg-white/10 rounded border border-white/20 text-sm font-mono text-cyan-300">fn</kbd>{' '}
-          {h.leadAfter}
+          {h.description}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10 text-xs font-medium text-gray-300">
@@ -162,7 +152,32 @@ export default function Hero({ lang }: { lang: Lang }) {
             {h.ctaSecondary(count)}
           </a>
         </div>
-        <p className="text-sm text-gray-500 mb-20">{h.platformNote}</p>
+        <p className="text-sm text-gray-400 mb-3">
+          {h.leadBefore}{' '}
+          <kbd className="px-2 py-0.5 bg-white/10 rounded border border-white/20 font-mono text-cyan-300">fn</kbd>{' '}
+          {h.leadAfter}
+        </p>
+        <p className="text-sm text-gray-500 mb-10">{h.platformNote}</p>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left mb-16">
+          {h.workflow.map((item, i) => (
+            <div key={item.title} className="rounded-2xl border border-cyan-400/15 bg-white/[0.035] p-5">
+              <span aria-hidden="true" className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-400/10 text-cyan-200 font-mono text-sm mb-3">{i + 1}</span>
+              <h2 className="font-bold text-white mb-2">{item.title}</h2>
+              <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <Link
+          href={href(lang, '/changelog')}
+          className="inline-flex flex-wrap justify-center items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-amber-400/30 text-sm text-gray-200 mb-8 backdrop-blur-md transition-all duration-300 hover:scale-[1.03] shadow-[0_0_24px_rgba(213,165,64,0.18)] group"
+        >
+          <span className="flex h-2 w-2 rounded-full bg-amber-300 animate-pulse" />
+          <span className="font-semibold text-amber-200">✨ v{SITE.version}:</span>
+          <span className="text-gray-300 group-hover:text-white transition-colors">{h.badgeText}</span>
+          <span className="text-xs text-amber-300 group-hover:translate-x-0.5 transition-transform">→</span>
+        </Link>
 
         <AppMockup lang={lang} />
       </div>

@@ -13,9 +13,9 @@ export const de: Dict = {
 },
   htmlLang: 'de',
   meta: {
-    title: 'MrWhisper – Voice Intelligence für deinen Mac',
+    title: 'MrWhisper – Dein Prompt-Workspace für Entwickler',
     description:
-      'MrWhisper: Diktieren per Hotkey, lokal transkribiert, als durchsuchbarer Verlauf mit Tags, Versionen, Notizen und optionaler KI-Veredelung.',
+      'Ein Prompt-Workspace für Vibe-Coder, Entwickler und Power-User: verknüpfte Prompts, Unterprompts, Versionen und Aufgabenfortschritt mit lokaler Transkription.',
   },
   nav: {
     demo: 'Demo',
@@ -31,16 +31,23 @@ export const de: Dict = {
   hero: {
     badgeText: 'Papierkorb: gelöschte Einträge behalten und jederzeit wiederherstellen',
     titleA: 'Deine Stimme.',
-    titleB: 'Dein zweites Gedächtnis.',
+    titleB: 'Dein Prompt-Workspace.',
+    audience: 'Für Vibe-Coder, Entwickler & Power-User',
+    description: 'Mach aus gesprochenen Ideen verbundene Prompts und Aufgaben. Organisiere Haupt- und Unterprompts, halte Versionen fest und verfolge jede Aufgabe per Status, Prozentanzeige oder Checkbox.',
     leadBefore: 'Drück',
     leadAfter:
-      'und sprich – der Text steht dort, wo dein Cursor ist. MrWhisper transkribiert lokal, sortiert jedes Diktat in einen durchsuchbaren Verlauf mit Tags, Versionen und Notizen und veredelt es auf Wunsch mit KI. Die Transkription braucht keine Cloud.',
+      'und diktiere in jedes Textfeld. Die Transkription läuft lokal mit Whisper oder Parakeet.',
     highlights: [
-      { icon: '🎙️', text: 'Lokale Transkription: Whisper & Parakeet' },
-      { icon: '⚡', text: 'Globaler Hotkey – Text am Cursor' },
-      { icon: '⏪', text: 'Flashback holt Gesagtes zurück' },
-      { icon: '🏷️', text: 'Tag-Katalog mit echten Ordnern' },
-      { icon: '🌍', text: 'Deutsch · English · Türkçe' },
+      { icon: '↳', text: 'Haupt- & Unterprompts' },
+      { icon: '@', text: 'Prompts miteinander verlinken' },
+      { icon: '⏪', text: 'Versionierung' },
+      { icon: '✓', text: '3 Arten von Fortschritt' },
+    ],
+    workflow: [
+      { title: 'Gedanken strukturieren', description: 'Halte eine Idee als Hauptprompt fest und entwickle sie mit Unterprompts weiter. Tags, Notizen und Quellen halten den Kontext zusammen.' },
+      { title: 'Prompts verbinden', description: 'Verlinke Einträge und Unterprompts per @-Mention. Sieh dir eine Referenz in der Vorschau an und springe zum Original zurück.' },
+      { title: 'Versionen behalten', description: 'Speichere Varianten als v1, v2, v3 … für Einträge und Unterprompts, mit Notizen, Bewertungen und einer Favoriten-Version.' },
+      { title: 'Aufgaben verfolgen', description: 'Wähle pro Eintrag einen 3-Stufen-Status, einen Prozent-Slider oder eine Checkbox. Filtere deinen Verlauf nach Aufgabenstatus.' },
     ],
     ctaPrimary: 'MrWhisper holen',
     ctaSecondary: (n: number) => `Alle ${n} Funktionen ansehen`,
@@ -54,9 +61,9 @@ export const de: Dict = {
     transcribing: 'Transkribiere …',
     ready: '● KI bereit',
     card1Tags: ['Apps › Codex', 'Idee'],
-    card1Title: 'Second Brain mit Codex',
+    card1Title: 'Die nächste Funktion für meine App planen',
     card1Text:
-      'Mit Codex möchte ich irgendwann diese Second-Brain-Sache aufbauen lassen – für Musik, meine Apps und Marketing.',
+      'Hauptprompt: die Funktion skizzieren. Unterprompts: die UI verfeinern, verwandte Ideen verlinken und die nächste Version festhalten.',
     card1Notes: '📝 Notiz & Quellen',
     card1Followups: '↳ Folge-Prompts (2)',
     card1Status: 'In Bearbeitung',
