@@ -145,7 +145,12 @@ export default function Hero({ lang }: { lang: Lang }) {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-4 mb-5">
+          {SITE.demoVideo ? (
+            <a href="#demo" className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-full font-bold text-lg transition-all shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-0.5">
+              <span aria-hidden="true">▶</span> {t.demo.watch}
+            </a>
+          ) : null}
           {SITE.preview ? (
             <button type="button" disabled className="w-full sm:w-auto px-8 py-4 bg-white/10 text-gray-400 rounded-full font-bold text-lg cursor-not-allowed">{t.preview.soon}</button>
           ) : (

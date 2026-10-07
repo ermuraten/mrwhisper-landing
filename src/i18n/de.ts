@@ -18,6 +18,7 @@ export const de: Dict = {
       'MrWhisper: Diktieren per Hotkey, lokal transkribiert, als durchsuchbarer Verlauf mit Tags, Versionen, Notizen und optionaler KI-Veredelung.',
   },
   nav: {
+    demo: 'Demo',
     new: 'Neu',
     features: 'Funktionen',
     pricing: 'Preise',
@@ -67,6 +68,8 @@ export const de: Dict = {
     popupAddTag: '+ Tag',
   },
   demo: {
+    watch: 'Demo ansehen',
+    directLink: 'Video direkt öffnen (MP4)',
     eyebrow: '🎬 In Aktion',
     title: 'Eine Minute mit MrWhisper',
     text: 'Eine echte Bildschirmaufnahme der App (Version 2.16) mit erfundenen Demo-Einträgen. Der englische Sprechtext ist eine synthetische Stimme, die auf der Stimme des Entwicklers beruht.',

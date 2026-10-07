@@ -16,6 +16,7 @@ export const en = {
       'MrWhisper: dictate with a hotkey, transcribed locally, kept as a searchable history with tags, versions, notes and optional AI refinement.',
   },
   nav: {
+    demo: 'Demo',
     new: 'New',
     features: 'Features',
     pricing: 'Pricing',
@@ -65,6 +66,8 @@ export const en = {
     popupAddTag: '+ Tag',
   },
   demo: {
+    watch: 'Watch demo',
+    directLink: 'Open video directly (MP4)',
     eyebrow: '🎬 See it in action',
     title: 'A minute with MrWhisper',
     text: 'A real screen recording of the app (version 2.16) with fictional demo entries. The narration is a synthetic voice based on the developer’s own voice. The interface language in the recording is German.',

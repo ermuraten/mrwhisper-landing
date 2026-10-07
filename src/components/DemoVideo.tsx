@@ -23,6 +23,9 @@ export default function DemoVideo({ lang }: { lang: Lang }) {
           {SITE.demoCaptions ? <track kind="captions" srcLang="en" label="English" src={asset(SITE.demoCaptions)} default /> : null}
           {d.fallback}
         </video>
+        <a href={asset(SITE.demoVideo)} className="inline-flex mt-5 text-sm text-cyan-300 hover:text-white underline underline-offset-4">
+          {d.directLink}
+        </a>
       </div>
     </section>
   );

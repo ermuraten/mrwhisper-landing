@@ -28,10 +28,15 @@ export default function Header({ lang }: { lang: Lang }) {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
+          {SITE.demoVideo ? (
+            <Link href={href(lang, '/') + '#demo'} aria-label={t.demo.watch} className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-2 text-sm font-semibold text-cyan-200 hover:bg-cyan-400/20 hover:text-white transition-colors whitespace-nowrap">
+              <span aria-hidden="true">▶</span> {t.nav.demo}
+            </Link>
+          ) : null}
           <LanguageSwitch lang={lang} className="text-sm text-gray-300 hover:text-white transition-colors">{t.nav.switchTo}</LanguageSwitch>
           {SITE.preview ? (
-            <button type="button" disabled className="bg-white/10 text-gray-400 px-3 sm:px-5 py-2 rounded-full text-sm sm:text-base whitespace-nowrap font-semibold cursor-not-allowed">{t.preview.soon}</button>
+            <button type="button" disabled className="hidden sm:inline-flex bg-white/10 text-gray-400 px-3 sm:px-5 py-2 rounded-full text-sm sm:text-base whitespace-nowrap font-semibold cursor-not-allowed">{t.preview.soon}</button>
           ) : (
           <Link href={href(lang, '/') + '#pricing'} className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-[0_0_20px_rgba(6,182,212,0.35)]">
             {t.nav.cta}
