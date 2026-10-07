@@ -33,10 +33,10 @@ export const SITE = {
 
   /** Legal notice data (Impressum). Must be real before the site goes public. */
   legal: {
-    name: TODO,
+    name: 'Murat Eren',
     street: TODO,
     city: TODO,
-    email: TODO,
+    email: 'info@mrwhisper.site',
     phone: '', // optional
     tradeName: '', // optional, e.g. a business name used for selling
     vatId: '', // optional

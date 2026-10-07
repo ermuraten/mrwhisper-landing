@@ -2,6 +2,18 @@
 
 Static, bilingual (English at `/`, German at `/de`) site for MrWhisper. Next.js 16 static export, hosted on GitHub Pages.
 
+## Deployment status — 2026-10-07
+
+- Repository: https://github.com/ermuraten/mrwhisper-landing (public).
+- GitHub Pages is enabled with GitHub Actions and HTTPS.
+- Configured URL: https://ermuraten.github.io/mrwhisper-landing/ (not live yet).
+- Contact: Murat Eren, info@mrwhisper.site. Street and postal code/city are still required before running the deploy workflow.
+- Local lint, language parity (68 features) and static production build passed. The launch check correctly fails on the two missing address fields.
+- `mrwhisper.site` is not connected to Pages yet. Claude Startups requires the business email domain to match the website domain: https://claude.com/de/programs/startups.
+
+Once the address is provided: run `npm run check`, commit and push, trigger `gh workflow run pages.yml --ref main`, then verify both languages, assets and legal pages on the deployed URL.
+Keep `NEXT_PUBLIC_BASE_PATH=/mrwhisper-landing` for the GitHub URL. When switching to the custom domain, configure it in GitHub Pages, add `public/CNAME` containing `mrwhisper.site` (used by this workflow to select an empty base path), and rebuild. GitHub Actions does not use the CNAME file itself to configure the custom domain.
+
 ## Develop
 
 ```bash
