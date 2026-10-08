@@ -12,8 +12,8 @@ export const SITE = {
   version: '2.17.0',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? '',
 
-  /** Search engines may index the site only after launch. */
-  indexable: false,
+  /** Public project presentation is crawlable; this does not enable sales. */
+  indexable: true,
 
   /** Price test value (decided 2026-10-06, review after ~20 sales). */
   currency: '€',

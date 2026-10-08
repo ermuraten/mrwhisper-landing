@@ -8,6 +8,6 @@ export function pageMetadata(lang: Lang, title?: string): Metadata {
   return {
     title: title ? `${title} | MrWhisper` : t.title,
     description: t.description,
-    robots: SITE.indexable ? undefined : { index: false, follow: false },
+    robots: { index: SITE.indexable, follow: SITE.indexable },
   };
 }

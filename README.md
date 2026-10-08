@@ -11,7 +11,7 @@ The original bilingual landing page is published as a product presentation at ht
 - `SITE.preview: true`: purchase buttons disabled; planned early-bird pricing is visible (39 € for the first 100 licenses, then 59 €, one-time). A pricing link is available in the hero. Sales FAQs and commercial terms remain hidden. `checkoutUrl` stays empty. No app download links; contact links remain available.
 - Legal pages disclose the pending service address without publishing placeholder or private address data. The notice does not replace a complete statutory legal address.
 - Demo, poster and captions are self-hosted in `public/media/`.
-- `npm run check:preview` checks language parity and requires preview mode, an empty checkout and disabled search indexing. `node scripts/prepare-pages.mjs` copies `company-preview/` into `out/company/` after the static build.
+- `npm run check:preview` checks language parity and requires preview mode and an empty checkout. Search indexing is independent of sales and is enabled for the public presentation. `node scripts/prepare-pages.mjs` copies `company-preview/` into `out/company/` after the static build.
 - The old introduction-only workflow was removed to prevent it from replacing the full landing page. The simple page's source and styling remain unchanged.
 - `public/CNAME` selects the root build path for the existing custom domain. HTTPS is enforced in GitHub Pages settings.
 - Update: edit, run lint/check:preview/build:pages/prepare-pages, review the static output, commit/push and run `gh workflow run pages.yml --ref main`.
@@ -36,7 +36,7 @@ NEXT_PUBLIC_BASE_PATH=/mrwhisper-landing npm run build:pages   # static export i
 | `checkoutUrl` | Lemon Squeezy checkout link. Empty = the buy button shows "Launching soon". |
 | `demoVideo`, `demoPoster` | File under `public/` (for example `/media/mrwhisper-demo.mp4`). Empty = the demo section is hidden. |
 | `legal.*` | Name, address and email for the legal notice (Impressum), privacy policy and terms. |
-| `indexable` | `false` = `noindex`. Flip to `true` at launch. |
+| `indexable` | `true` = public crawling/indexing permitted; independent of the commercial launch. |
 
 ## Commercial launch remains blocked until the legal data exists
 
@@ -58,3 +58,7 @@ To go live:
 The existing landing page uses the MrWhisper app's Navy-Leder materials: procedural grain and sheen, golden stitches in a pressed groove, brass corner fittings and a white waveform on a brass plate. The texture and fitting variables in `src/app/leather-theme.css` come from the app's `renderer/styles/leather.css`; `public/logo_mark_white.png` is its existing public logo mark. Both language layouts load the theme. The illustrated history view contains fictional demo text. No personal screenshots or transcripts are published.
 
 Shared panel, button and rail styles cover the landing page, changelog and legal pages. Material sample cards still show all three app skins. The independent `/company/` page keeps its original styling. The demo video, planned prices and disabled checkout are unchanged. FAQ answers grow to their content height on narrow screens.
+
+## Public crawler access — 2026-10-08
+
+On the user’s explicit request, the public presentation permits all crawlers (`Allow: /`) and uses `index, follow` metadata, including `/company/`. `public/sitemap.xml` lists all eleven public pages. This improves discoverability without enabling checkout. The company introduction now describes the prompt workspace and transparently states that formal company formation is pending. No private address or registration information was invented.
