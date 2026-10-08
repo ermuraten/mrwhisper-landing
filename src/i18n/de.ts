@@ -53,6 +53,14 @@ export const de: Dict = {
     ctaPrimary: 'MrWhisper holen',
     ctaSecondary: (n: number) => `Alle ${n} Funktionen ansehen`,
     platformNote: 'macOS (Apple Silicon). Eine Windows-Version ist in Entwicklung.',
+    projectSince: 'App-Entwicklung seit etwa Ende Mai 2026',
+    projectBy: 'Eigenfinanziertes Projekt von Murat Eren · Formale Unternehmensgründung noch ausstehend.',
+    roadmapTitle: 'Als Nächstes · geplante Erweiterungen',
+    roadmapNote: 'Diese Erweiterungen sind in Entwicklung und noch nicht verfügbar.',
+    roadmap: [
+      { title: 'MCP / API für KI-Entwicklertools', description: 'Eine geplante Schnittstelle soll KI-Entwicklertools Zugriff auf MrWhisper geben, damit sie verknüpfte Prompts und To-dos direkt aus der App übernehmen können.' },
+      { title: 'KI-Transkription nach deiner Wahl', description: 'Geplant ist eine zusätzliche, optionale KI-Transkription, die der Nutzer selbst auswählt. Die lokale Spracherkennung bleibt verfügbar.' },
+    ],
   },
   mock: {
     illustration: 'Illustration der Verlaufsansicht',

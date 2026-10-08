@@ -157,7 +157,11 @@ export default function Hero({ lang }: { lang: Lang }) {
           <kbd className="px-2 py-0.5 bg-white/10 rounded border border-white/20 font-mono text-cyan-300">fn</kbd>{' '}
           {h.leadAfter}
         </p>
-        <p className="text-sm text-gray-500 mb-10">{h.platformNote}</p>
+        <p className="text-sm text-gray-500 mb-6">{h.platformNote}</p>
+        <div className="inset-chip max-w-2xl mx-auto px-5 py-4 mb-8">
+          <p className="font-semibold text-amber-200 mb-1">{h.projectSince}</p>
+          <p className="text-sm text-gray-400 leading-relaxed">{h.projectBy}</p>
+        </div>
 
         {SITE.preview ? (
           <a href="#pricing" className="price-summary inline-block text-sm underline underline-offset-4 mb-10">
@@ -174,6 +178,21 @@ export default function Hero({ lang }: { lang: Lang }) {
             </div>
           ))}
         </div>
+
+        <section aria-labelledby="roadmap-title" className="text-left mb-12">
+          <div className="text-center mb-5">
+            <h2 id="roadmap-title" className="text-xl font-bold text-amber-200 mb-2">{h.roadmapTitle}</h2>
+            <p className="text-sm text-gray-400">{h.roadmapNote}</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {h.roadmap.map(item => (
+              <article key={item.title} className="stitched-panel workflow-card rounded-2xl p-6">
+                <h3 className="font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <Link
           href={href(lang, '/changelog')}

@@ -51,6 +51,14 @@ export const en = {
     ctaPrimary: 'Get MrWhisper',
     ctaSecondary: (n: number) => `See all ${n} features`,
     platformNote: 'macOS (Apple Silicon). A Windows version is in development.',
+    projectSince: 'App development since approximately late May 2026',
+    projectBy: 'Self-funded project by Murat Eren · Formal company formation is still pending.',
+    roadmapTitle: 'Coming next · planned extensions',
+    roadmapNote: 'These extensions are in development and are not available yet.',
+    roadmap: [
+      { title: 'MCP / API for AI developer tools', description: 'A planned interface will let AI developer tools access MrWhisper and take over linked prompts and to-dos directly from the app.' },
+      { title: 'AI transcription, chosen by you', description: 'A planned optional AI transcription mode will be available when the user chooses it. Local speech recognition remains available.' },
+    ],
   },
   mock: {
     illustration: 'Illustration of the history view',

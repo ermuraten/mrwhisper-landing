@@ -62,3 +62,7 @@ Shared panel, button and rail styles cover the landing page, changelog and legal
 ## Public crawler access — 2026-10-08
 
 On the user’s explicit request, the public presentation permits all crawlers (`Allow: /`) and uses `index, follow` metadata, including `/company/`. `public/sitemap.xml` lists all eleven public pages. This improves discoverability without enabling checkout. The company introduction now describes the prompt workspace and transparently states that formal company formation is pending. No private address or registration information was invented.
+
+The hero in both languages and the simple company page state the approximate development start in late May 2026, calculated from the user’s statement that the app has existed for 132 days as of 8 October 2026. This is explicitly distinct from pending formal company formation.
+
+The user-requested roadmap adds MCP/API task handoff to AI developer tools and user-selected optional AI transcription. Both are explicitly planned, not released functionality; no availability date is promised.
