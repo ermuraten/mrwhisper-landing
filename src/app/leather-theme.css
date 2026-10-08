@@ -58,6 +58,7 @@
   background-image: radial-gradient(ellipse at 50% 25%, transparent 35%, #030b15aa 100%), var(--lth-sheen), var(--lth-grain), var(--lth-ground-grad);
   background-blend-mode: multiply, color-dodge, multiply, normal;
   background-size: 100% 100vh, 150px 150px, 250px 250px, 100% 100vh;
+  background-repeat: no-repeat, repeat, repeat, no-repeat;
   background-attachment: fixed;
   padding: 0 18px 18px;
   isolation: isolate;
