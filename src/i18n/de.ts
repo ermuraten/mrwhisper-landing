@@ -53,7 +53,7 @@ export const de: Dict = {
     ctaPrimary: 'MrWhisper holen',
     ctaSecondary: (n: number) => `Alle ${n} Funktionen ansehen`,
     platformNote: 'macOS (Apple Silicon). Eine Windows-Version ist in Entwicklung.',
-    projectSince: 'App-Entwicklung seit etwa Ende Mai 2026',
+    projectSince: 'Erste Version: April 2026 (v1.0.0)',
     projectBy: 'Eigenfinanziertes Projekt von Murat Eren · Formale Unternehmensgründung noch ausstehend.',
     roadmapTitle: 'Als Nächstes · geplante Erweiterungen',
     roadmapNote: 'Diese Erweiterungen sind in Entwicklung und noch nicht verfügbar.',

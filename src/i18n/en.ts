@@ -51,7 +51,7 @@ export const en = {
     ctaPrimary: 'Get MrWhisper',
     ctaSecondary: (n: number) => `See all ${n} features`,
     platformNote: 'macOS (Apple Silicon). A Windows version is in development.',
-    projectSince: 'App development since approximately late May 2026',
+    projectSince: 'First version: April 2026 (v1.0.0)',
     projectBy: 'Self-funded project by Murat Eren · Formal company formation is still pending.',
     roadmapTitle: 'Coming next · planned extensions',
     roadmapNote: 'These extensions are in development and are not available yet.',
