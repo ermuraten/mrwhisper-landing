@@ -55,7 +55,7 @@ export default function Features({ lang }: { lang: Lang }) {
                 role="tab"
                 aria-selected={active}
                 onClick={() => setFilter(tab.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 flex items-center gap-2 ${
+                className={`feature-filter px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 flex items-center gap-2 ${
                   active
                     ? 'bg-cyan-500/15 border-cyan-400/50 text-white shadow-[0_0_20px_rgba(6,182,212,0.2)]'
                     : 'bg-white/[0.03] border-white/10 text-gray-300 hover:bg-white/[0.07] hover:text-white'

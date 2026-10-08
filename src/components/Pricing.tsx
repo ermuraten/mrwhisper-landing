@@ -10,7 +10,7 @@ export default function Pricing({ lang }: { lang: Lang }) {
     const p = getDict(lang).preview;
     return (
       <section id="pricing" className="py-24 px-6 scroll-mt-24">
-        <div className="container mx-auto max-w-3xl text-center rounded-3xl border border-cyan-400/20 bg-white/[0.025] px-6 py-12">
+        <div className="pricing-panel stitched-panel fitted-panel container mx-auto max-w-3xl text-center rounded-3xl px-6 py-12">
           <div className="eyebrow eyebrow-cyan mb-5">{p.availability}</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-5">{p.title}</h2>
           <div className="mb-8">

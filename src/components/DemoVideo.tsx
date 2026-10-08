@@ -12,8 +12,9 @@ export default function DemoVideo({ lang }: { lang: Lang }) {
         <div className="eyebrow eyebrow-cyan mb-5">{d.eyebrow}</div>
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">{d.title}</h2>
         <p className="text-gray-400 max-w-2xl mx-auto mb-8 font-light">{d.text}</p>
+        <div className="demo-frame stitched-panel fitted-panel">
         <video
-          className="w-full rounded-2xl border border-white/10 shadow-2xl bg-black"
+          className="w-full rounded-xl bg-black"
           controls
           preload="metadata"
           playsInline
@@ -23,6 +24,7 @@ export default function DemoVideo({ lang }: { lang: Lang }) {
           {SITE.demoCaptions ? <track kind="captions" srcLang="en" label="English" src={asset(SITE.demoCaptions)} default /> : null}
           {d.fallback}
         </video>
+        </div>
         <a href={asset(SITE.demoVideo)} className="inline-flex mt-5 text-sm text-cyan-300 hover:text-white underline underline-offset-4">
           {d.directLink}
         </a>

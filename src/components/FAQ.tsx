@@ -27,10 +27,11 @@ export default function FAQ({ lang }: { lang: Lang }) {
             return (
               <div 
                 key={index} 
-                className={`rounded-2xl overflow-hidden transition-all duration-300 border ${isOpen ? 'bg-white/[0.05] border-cyan-500/25' : 'bg-white/[0.025] border-white/8 hover:border-white/15'}`}
+                className={`stitched-panel faq-panel rounded-2xl overflow-hidden transition-all duration-300 border ${isOpen ? 'bg-white/[0.05] border-cyan-500/25' : 'bg-white/[0.025] border-white/8 hover:border-white/15'}`}
               >
                 <button 
                   className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+                  aria-expanded={isOpen}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                 >
                   <span className="font-medium text-lg">{faq.question}</span>
@@ -44,9 +45,12 @@ export default function FAQ({ lang }: { lang: Lang }) {
                   </svg>
                 </button>
                 <div 
-                  className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-72 pb-5 opacity-100' : 'max-h-0 opacity-0'}`}
+                  className={`faq-answer grid transition-[grid-template-rows] duration-300 ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
+                  aria-hidden={!isOpen}
                 >
-                  <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
+                  <div className="min-h-0 overflow-hidden">
+                    <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
+                  </div>
                 </div>
               </div>
             );

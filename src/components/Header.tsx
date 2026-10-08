@@ -7,11 +7,11 @@ import { getDict } from '@/i18n';
 export default function Header({ lang }: { lang: Lang }) {
   const t = getDict(lang);
   return (
-    <header className="fixed top-0 w-full z-50 bg-[#0a0f1c]/75 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    <header className="site-header fixed z-50">
       <div className="container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-        <Link href={href(lang, '/')} className="flex items-center gap-2">
+        <Link href={href(lang, '/')} className="site-brand flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={asset('/logo_icon.png')} alt="MrWhisper logo" width={40} height={40} className="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+          <span className="brand-plate"><img src={asset('/logo_mark_white.png')} alt="" width={40} height={40} /></span>
           <span className="text-xl font-bold tracking-tight text-white">MrWhisper</span>
         </Link>
 
@@ -30,7 +30,7 @@ export default function Header({ lang }: { lang: Lang }) {
 
         <div className="flex items-center gap-3 sm:gap-4">
           {SITE.demoVideo ? (
-            <Link href={href(lang, '/') + '#demo'} aria-label={t.demo.watch} className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-2 text-sm font-semibold text-cyan-200 hover:bg-cyan-400/20 hover:text-white transition-colors whitespace-nowrap">
+            <Link href={href(lang, '/') + '#demo'} aria-label={t.demo.watch} className="brass-button inline-flex items-center gap-1.5 px-3 py-2 text-sm font-semibold whitespace-nowrap">
               <span aria-hidden="true">▶</span> {t.nav.demo}
             </Link>
           ) : null}

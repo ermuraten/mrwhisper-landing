@@ -9,12 +9,12 @@ export default function Shell({ lang, children }: { lang: Lang; children: React.
   return (
     <html
       lang={getDict(lang).htmlLang}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable} site-document h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-[#0a0f1c] text-white selection:bg-cyan-500/30" suppressHydrationWarning>
+      <body className="site-shell min-h-full flex flex-col" suppressHydrationWarning>
         <Header lang={lang} />
-        <main className="flex-1 pt-20">{children}</main>
+        <main className="site-main flex-1 pt-20">{children}</main>
         <Footer lang={lang} />
       </body>
     </html>

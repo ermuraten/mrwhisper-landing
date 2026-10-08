@@ -8,12 +8,12 @@ export default function Footer({ lang }: { lang: Lang }) {
   const t = getDict(lang).footer;
   const p = getDict(lang).preview;
   return (
-    <footer className="border-t border-white/10 bg-black/50 py-12 mt-20">
+    <footer className="site-footer py-12 mt-20">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
-          <Link href={href(lang, '/')} className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+          <Link href={href(lang, '/')} className="site-brand flex items-center gap-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={asset('/logo_icon.png')} alt="MrWhisper logo" width={24} height={24} className="w-6 h-6 object-contain" />
+            <span className="brand-plate brand-plate-small"><img src={asset('/logo_mark_white.png')} alt="" width={24} height={24} /></span>
             <span className="font-bold text-lg">MrWhisper</span>
           </Link>
           <p className="text-gray-500 text-sm">

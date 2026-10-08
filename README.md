@@ -52,3 +52,9 @@ To go live:
 - The changelog is bilingual: English at `/changelog/`, German at `/de/changelog/`. Language switching preserves the current page. Add matching versions and entries to `src/data/changelog.de.json` and `changelog.en.json`.
 - The legal pages are good-faith drafts, not reviewed by a lawyer.
 - The site loads nothing from third parties: fonts, images and the demo video are self-hosted.
+
+## Navy leather presentation — 2026-10-08
+
+The existing landing page uses the MrWhisper app's Navy-Leder materials: procedural grain and sheen, golden stitches in a pressed groove, brass corner fittings and a white waveform on a brass plate. The texture and fitting variables in `src/app/leather-theme.css` come from the app's `renderer/styles/leather.css`; `public/logo_mark_white.png` is its existing public logo mark. Both language layouts load the theme. The illustrated history view contains fictional demo text. No personal screenshots or transcripts are published.
+
+Shared panel, button and rail styles cover the landing page, changelog and legal pages. Material sample cards still show all three app skins. The independent `/company/` page keeps its original styling. The demo video, planned prices and disabled checkout are unchanged. FAQ answers grow to their content height on narrow screens.

@@ -2,7 +2,7 @@ export function Page({ title, children }: { title: string; children: React.React
   return (
     <div className="container mx-auto px-6 py-24 max-w-3xl">
       <h1 className="text-4xl font-bold mb-8">{title}</h1>
-      <div className="space-y-8 text-gray-300 leading-relaxed">{children}</div>
+      <div className="legal-panel stitched-panel rounded-2xl p-7 sm:p-10 space-y-8 text-gray-300 leading-relaxed">{children}</div>
     </div>
   );
 }
