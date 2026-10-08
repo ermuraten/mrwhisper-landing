@@ -259,6 +259,8 @@
 .site-shell .mock-number { color: var(--lth-numeral); background: none; text-shadow: 1px 1px 2px #000e, -1px -1px 1px #fff3; }
 .site-shell .mock-fold { background: linear-gradient(225deg, #fff2b0 0%, #e0ac38 30%, #9b6c1a 52%, transparent 56%); }
 .site-shell :is(.mock-popup, .mock-recorder) { background: var(--lth-sheen), var(--lth-grain), var(--lth-rail-grad); background-blend-mode: color-dodge, multiply, normal; border: 1px solid #d5a54080; box-shadow: 0 20px 40px #0009, inset 0 1px 1px #fff3; }
+/* Floating UI sits in front of the app window's brass fittings (z-index: 2). */
+.mock-popup, .mock-recorder { z-index: 3; }
 .mock-popup { animation: none; }
 
 /* Flashback as a physical recorder dial rather than a neon portal. */
