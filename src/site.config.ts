@@ -9,7 +9,7 @@ export const SITE = {
   /** Public presentation with planned pricing; checkout and sales terms stay inactive. */
   preview: true,
   maker: 'Renixa',
-  version: '2.17.0',
+  version: '2.18.0',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? '',
 
   /** Public project presentation is crawlable; this does not enable sales. */

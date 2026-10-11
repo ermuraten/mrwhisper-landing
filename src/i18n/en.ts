@@ -28,7 +28,7 @@ export const en = {
     menuLabel: 'Main navigation',
   },
   hero: {
-    badgeText: 'Trash: keep deleted entries and restore them anytime',
+    badgeText: 'Fullscreen without the breathing indicator and compact origin icons in history',
     titleA: 'Your voice.',
     titleB: 'Your prompt workspace.',
     audience: 'For vibe coders, developers & power users',

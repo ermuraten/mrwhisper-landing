@@ -1,5 +1,19 @@
 [
   {
+    "version": "v2.18.0",
+    "date": "12 October 2026",
+    "changes": [
+      "Improvement: Compact origin indicators in history - Dictated, typed, refined and imported entries use consistent origin icons below the date in the left card column. Date and origin appear on hover or keyboard focus; the extra audio-import label no longer occupies the header. Tooltips identify the origin and show completed and total chunks for imports. Compact rows also distinguish audio imports from normal dictation.",
+      "Improvement: Public website with bilingual changelog and demo - The full landing page is available in English at mrwhisper.site and in German under /de/. All previous changelog releases are available in both languages, and switching language preserves the current page. The existing subtitled demo and direct MP4 link are accessible from the header and hero. The simple company page remains available under /company/.",
+      "Improvement: Website follows the app design - Navy leather, gold stitching, brass corners and the original wave logo reflect the app. Floating demo elements appear above the brass corners, with layouts adapted for desktop and mobile. Main prompts, follow-up prompts, links, versioning and three progress modes present MrWhisper as a prompt workspace for developers, vibe coders and power users.",
+      "Improvement: Planned introductory pricing is visible - The website shows a planned one-time price of €39 for the first 100 licences and €59 afterwards. Purchase buttons remain disabled until launch; public app downloads and checkout are not enabled yet.",
+      "Improvement: Website accessible to crawlers - Robots and sitemap allow public crawling; the previous noindex/nofollow restriction has been removed. The project timeline references the documented first version, v1.0.0 in April 2026.",
+      "Maintenance: Planned AI integrations documented - The roadmap describes a future MCP/API interface allowing AI development tools to take over prompts and tasks from MrWhisper, plus user-selectable AI transcription. Both extensions are planned and are not available in the app yet.",
+      "Fix: Hide the breathing indicator in fullscreen - On macOS, the indicator disappears in fullscreen regardless of the app, including YouTube in Chrome, browser fullscreen and screen-filling windows on additional monitors. It returns to its saved position after leaving fullscreen. Starting dictation or resetting the position does not reveal it during fullscreen; dictation continues to work.",
+      "Fix: Tag menus above leather stitching - Quick filters, tag display options and the colour picker in history appear above decorative stitching on hover. The menus remain visible and usable in all three leather themes."
+    ]
+  },
+  {
     "version": "v2.17.0",
     "date": "6 October 2026",
     "changes": [

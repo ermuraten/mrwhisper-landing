@@ -1,5 +1,19 @@
 [
   {
+    "version": "v2.18.0",
+    "date": "12. Oktober 2026",
+    "changes": [
+      "Verbesserung: Kompakte Herkunftsanzeige im Verlauf - Eingesprochene, getippte, veredelte und importierte Einträge zeigen einheitliche Herkunftssymbole unter dem Datum in der linken Kartenspalte. Datum und Herkunft erscheinen beim Überfahren oder Tastaturfokus; der zusätzliche Audioimport-Text in der Kopfzeile entfällt. Der Tooltip nennt die Herkunft und bei Audioimporten die fertigen und gesamten Abschnitte. Auch die Kompaktansicht unterscheidet Audioimporte von normalen Diktaten.",
+      "Verbesserung: Öffentliche Website mit zweisprachigem Changelog und Demo - Die vollständige Landingpage ist unter mrwhisper.site auf Englisch und unter /de/ auf Deutsch erreichbar. Alle bisherigen Changelog-Versionen sind in beiden Sprachen verfügbar; der Sprachwechsel bleibt auf der geöffneten Seite. Die bestehende Demo mit Untertiteln und direktem MP4-Link ist über Kopfzeile und Startbereich erreichbar. Die einfache Unternehmensseite bleibt unter /company/ erhalten.",
+      "Verbesserung: Website im Stil der App - Navy-Leder, goldene Nähte, Messingecken und das originale Wellenlogo greifen das App-Design auf. Bewegliche Demo-Elemente liegen vor den Messingecken; die Darstellung ist für Desktop und Mobilgeräte angepasst. Haupt- und Unterprompts, Verknüpfungen, Versionierung und die drei Fortschrittsarten stehen als Prompt-Workspace für Entwickler, Vibe-Coder und Power-User im Vordergrund.",
+      "Verbesserung: Geplante Einführungspreise sichtbar - Die Website nennt 39 € einmalig für die ersten 100 Lizenzen und danach 59 € als geplante Preise. Kaufbuttons bleiben bis zum Verkaufsstart deaktiviert; öffentliche App-Downloads und Checkout sind noch nicht freigeschaltet.",
+      "Verbesserung: Website für Crawler zugänglich - Robots und Sitemap erlauben die öffentliche Erfassung der Website; die frühere noindex/nofollow-Sperre ist entfernt. Die Projektzeitlinie verweist auf die dokumentierte erste Version v1.0.0 im April 2026.",
+      "Wartung: Geplante KI-Anbindung dokumentiert - Die Roadmap beschreibt eine künftige MCP/API-Schnittstelle, über die KI-Entwicklerwerkzeuge Prompts und Aufgaben aus MrWhisper übernehmen können, sowie eine vom Nutzer wählbare KI-Transkription. Beide Erweiterungen sind Planung und noch nicht in der App verfügbar.",
+      "Fehlerbehebung: Atemindikator bei Vollbild ausblenden - Auf macOS verschwindet der Indikator bei Vollbild unabhängig von der App, einschließlich YouTube in Chrome, Browser-Vollbild und bildschirmfüllenden Fenstern auf weiteren Monitoren. Nach dem Verlassen erscheint er automatisch an seiner gespeicherten Position. Auch ein Diktat oder ein Zurücksetzen der Position blendet ihn im Vollbild nicht ein; die Diktierfunktion läuft weiter.",
+      "Fehlerbehebung: Tag-Menüs vor den Ledernähten - Schnellfilter, Tag-Anzeige-Auswahl und Farbauswahl im Verlauf liegen beim Überfahren über den dekorativen Nähten. Die Menüs bleiben in allen drei Lederdesigns sichtbar und bedienbar."
+    ]
+  },
+  {
     "version": "v2.17.0",
     "date": "6. Oktober 2026",
     "changes": [

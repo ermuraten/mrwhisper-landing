@@ -30,7 +30,7 @@ export const de: Dict = {
     menuLabel: 'Hauptnavigation',
   },
   hero: {
-    badgeText: 'Papierkorb: gelöschte Einträge behalten und jederzeit wiederherstellen',
+    badgeText: 'Vollbild ohne Atemindikator und kompakte Herkunftssymbole im Verlauf',
     titleA: 'Deine Stimme.',
     titleB: 'Dein Prompt-Workspace.',
     audience: 'Für Vibe-Coder, Entwickler & Power-User',
