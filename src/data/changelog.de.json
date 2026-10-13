@@ -1,5 +1,13 @@
 [
   {
+    "version": "v2.19.0",
+    "date": "13. Oktober 2026",
+    "changes": [
+      "Verbesserung: Direkter Versionsbutton für Haupteinträge - Der Button „+ Version“ ist im Kartenkopf dauerhaft sichtbar, auch bevor eine zweite Version existiert. Haupteinträge und Folge-Prompts verwenden denselben Stil; ihre Versionsleisten zeigen die kompakte Variante. Das bisherige Versionsmodell mit Umschalten, Umbenennen, Metadaten und der Einstellung zur Textübernahme bleibt erhalten. Der direkte Zugang ist auch in geöffneten Kompaktzeilen verfügbar.",
+      "Verbesserung: Farbige Hinweise auf Notizen und Folge-Prompts - Sobald Inhalte vorhanden sind, hebt der Kartenfuß „Notiz & Quellen“ violett und „Folge-Prompts“ indigo hervor. Schrift, Hintergrund und Umrandung bleiben auch bei geschlossenen Bereichen farbig; die Zähler zeigen die Anzahl der Inhalte. Leere Bereiche bleiben neutral. Die Markierung gilt in der Karten- und Kompaktansicht sowie in allen Oberflächen."
+    ]
+  },
+  {
     "version": "v2.18.0",
     "date": "12. Oktober 2026",
     "changes": [

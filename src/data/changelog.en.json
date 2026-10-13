@@ -1,5 +1,13 @@
 [
   {
+    "version": "v2.19.0",
+    "date": "13 October 2026",
+    "changes": [
+      "Improvement: Direct version button for main entries - The “+ Version” button is always visible in the card header, even before a second version exists. Main entries and follow-up prompts share the same style, with a compact variant in their version bars. The existing version model retains switching, renaming, metadata and the setting for copying previous text. Direct access is also available in expanded compact rows.",
+      "Improvement: Coloured indicators for notes and follow-up prompts - When content exists, the card footer highlights “Notes & Sources” in violet and “Follow-up Prompts” in indigo. Text, background and borders stay coloured even when the sections are closed, while counters show the number of items. Empty sections remain neutral. The indicators work in card and compact views and across all themes."
+    ]
+  },
+  {
     "version": "v2.18.0",
     "date": "12 October 2026",
     "changes": [
