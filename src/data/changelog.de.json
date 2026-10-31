@@ -1,5 +1,14 @@
 [
   {
+    "version": "v2.20.0",
+    "date": "31. Oktober 2026",
+    "changes": [
+      "Neue Funktion: TikTok-Videos transkribieren - Der Audioimport unterstützt öffentliche TikTok-Einzelvideos und offizielle Kurzlinks neben YouTube. Der Reiter „YouTube / TikTok“ übernimmt den Link als Quelle und verarbeitet die vollständige Videotonspur mit Sprache und Hintergrundton. Abschnittsweise Transkription, Fortschrittsanzeige, Pause und Fortsetzen verwenden den bestehenden Ablauf. Die Oberfläche ist auf Deutsch, Englisch und Türkisch verfügbar.",
+      "Verbesserung: Einheitliche Tag- und Versionsbuttons - „+ Tag“ und „+ Version“ im Kartenkopf verwenden dieselbe kompakte Darstellung und erscheinen beim Überfahren oder per Tastaturfokus. Sobald mehrere Versionen vorhanden sind, entfällt der obere Versionsbutton; neue Versionen lassen sich weiterhin in der Versionsleiste hinzufügen. Das gilt für Haupt- und Folgeeinträge sowie geöffnete Kompaktzeilen.",
+      "Wartung: Roadmap für KI-Zugriff und Gesprächsablage konkretisiert - Dokumentiert sind ein gemeinsamer Funktionskern für MCP und HTTP-API mit abrufbarer Anleitung, die automatische Übernahme von Prompts und KI-Antworten mit vorhandenen Tags sowie eine direkte Übergabe an KI-Clients. Diese Anbindungen und die Gesprächsablage sind Planung und noch nicht in der App verfügbar."
+    ]
+  },
+  {
     "version": "v2.19.0",
     "date": "13. Oktober 2026",
     "changes": [

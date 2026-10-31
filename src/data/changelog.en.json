@@ -1,5 +1,14 @@
 [
   {
+    "version": "v2.20.0",
+    "date": "31 October 2026",
+    "changes": [
+      "New feature: Transcribe TikTok videos - Audio import now supports public individual TikTok videos and official short links alongside YouTube. The “YouTube / TikTok” tab stores the link as a source and processes the full video audio mix, including speech and background sound. Chunked transcription, progress, pause and resume use the existing workflow. The interface is available in German, English and Turkish.",
+      "Improvement: Consistent tag and version buttons - “+ Tag” and “+ Version” in the card header share the same compact appearance and appear on hover or keyboard focus. Once multiple versions exist, the upper version button disappears; new versions can still be added in the version bar. This applies to main entries, follow-up prompts and expanded compact rows.",
+      "Maintenance: Refined roadmap for AI access and conversation capture - The documented plan covers a shared application core for MCP and an HTTP API with discoverable guidance, automatic capture of prompts and AI responses using existing tags, and direct handoff to AI clients. These integrations and conversation capture are planned and are not yet available in the app."
+    ]
+  },
+  {
     "version": "v2.19.0",
     "date": "13 October 2026",
     "changes": [
